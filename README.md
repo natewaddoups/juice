@@ -4,7 +4,7 @@
 
 In late 2001, I set out to build a small walking robot, and figured I would start
 by simulating it, using Russ Smith's Open Dynamics Engine (see http://ode.org/). 
-Specifying robot geometry in C++ was hard though, so I started building a GUI to
+Specifying robot geometry in C++ was hard, so I started building a GUI to
 define and "motorize" jointed rigid bodies.
 
 One thing led to another, and I ended up with a GUI that I was quite proud of, complete
