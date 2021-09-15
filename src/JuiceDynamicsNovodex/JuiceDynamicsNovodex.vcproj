@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="9.00"
+	Name="JuiceDynamicsNovodex"
+	ProjectGUID="{3CE52403-CFBE-4F2E-8103-50D6449AAA12}"
+	Keyword="Win32Proj"
+	TargetFrameworkVersion="131072"
+	>
+	<Platforms>
+		<Platform
+			Name="Win32"
+		/>
+	</Platforms>
+	<ToolFiles>
+	</ToolFiles>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			OutputDirectory="../../bin"
+			IntermediateDirectory="Debug"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="0"
+				AdditionalIncludeDirectories="../../include; ../../../libraries/ode/include"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;_USRDLL;JUICEDYNAMICSNOVODEX_EXPORTS"
+				MinimalRebuild="true"
+				BasicRuntimeChecks="3"
+				RuntimeLibrary="3"
+				TreatWChar_tAsBuiltInType="true"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="false"
+				DebugInformationFormat="4"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="Generics.lib NxCollision.lib NxRigidBody.lib JuiceEngine.lib"
+				OutputFile="$(OutDir)/JuiceDynamicsNovodex.dll"
+				LinkIncremental="2"
+				AdditionalLibraryDirectories="../../bin;../../bin/release; c:\program files\novodex\steel1\lib"
+				GenerateDebugInformation="true"
+				ProgramDatabaseFile="$(OutDir)/JuiceDynamicsNovodex.pdb"
+				SubSystem="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/JuiceDynamicsNovodex.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			OutputDirectory="../../bin/release"
+			IntermediateDirectory="Release"
+			ConfigurationType="2"
+			InheritedPropertySheets="$(VCInstallDir)VCProjectDefaults\UpgradeFromVC71.vsprops"
+			CharacterSet="2"
+			>
+			<Tool
+				Name="VCPreBuildEventTool"
+			/>
+			<Tool
+				Name="VCCustomBuildTool"
+			/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"
+			/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"
+			/>
+			<Tool
+				Name="VCMIDLTool"
+			/>
+			<Tool
+				Name="VCCLCompilerTool"
+				Optimization="2"
+				InlineFunctionExpansion="1"
+				OmitFramePointers="true"
+				AdditionalIncludeDirectories="../../include; ../../../libraries/ode/include"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;_USRDLL;JUICEDYNAMICSNOVODEX_EXPORTS"
+				StringPooling="true"
+				RuntimeLibrary="0"
+				EnableFunctionLevelLinking="true"
+				TreatWChar_tAsBuiltInType="true"
+				RuntimeTypeInfo="true"
+				UsePrecompiledHeader="0"
+				WarningLevel="3"
+				Detect64BitPortabilityProblems="true"
+				DebugInformationFormat="3"
+			/>
+			<Tool
+				Name="VCManagedResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCResourceCompilerTool"
+			/>
+			<Tool
+				Name="VCPreLinkEventTool"
+			/>
+			<Tool
+				Name="VCLinkerTool"
+				AdditionalDependencies="NxCollision.lib NxRigidBody.lib JuiceEngine.lib generics.lib"
+				OutputFile="$(OutDir)/JuiceDynamicsNovodex.dll"
+				LinkIncremental="1"
+				AdditionalLibraryDirectories="../../bin; c:\program files\novodex\steel1\lib"
+				GenerateDebugInformation="true"
+				SubSystem="2"
+				OptimizeReferences="2"
+				EnableCOMDATFolding="2"
+				RandomizedBaseAddress="1"
+				DataExecutionPrevention="0"
+				ImportLibrary="$(OutDir)/JuiceDynamicsNovodex.lib"
+				TargetMachine="1"
+			/>
+			<Tool
+				Name="VCALinkTool"
+			/>
+			<Tool
+				Name="VCManifestTool"
+			/>
+			<Tool
+				Name="VCXDCMakeTool"
+			/>
+			<Tool
+				Name="VCBscMakeTool"
+			/>
+			<Tool
+				Name="VCFxCopTool"
+			/>
+			<Tool
+				Name="VCAppVerifierTool"
+			/>
+			<Tool
+				Name="VCPostBuildEventTool"
+			/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;def;odl;idl;hpj;bat;asm"
+			>
+			<File
+				RelativePath="Body.cpp"
+				>
+			</File>
+			<File
+				RelativePath="Factory.cpp"
+				>
+			</File>
+			<File
+				RelativePath="Joint.cpp"
+				>
+			</File>
+			<File
+				RelativePath="JuiceDynamicsNovodex.cpp"
+				>
+			</File>
+			<File
+				RelativePath="PrismaticJoint.cpp"
+				>
+			</File>
+			<File
+				RelativePath="RevoluteJoint.cpp"
+				>
+			</File>
+			<File
+				RelativePath="SphericalJoint.cpp"
+				>
+			</File>
+			<File
+				RelativePath="stdafx.cpp"
+				>
+				<FileConfiguration
+					Name="Debug|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="Release|Win32"
+					>
+					<Tool
+						Name="VCCLCompilerTool"
+						UsePrecompiledHeader="1"
+					/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath="World.cpp"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp;hxx;hm;inl;inc"
+			>
+			<File
+				RelativePath="..\..\include\DynamicsAPI.h"
+				>
+			</File>
+			<File
+				RelativePath="DynamicsNovodex.h"
+				>
+			</File>
+			<File
+				RelativePath="JuiceDynamicsNovodex.h"
+				>
+			</File>
+			<File
+				RelativePath="NovodexOutput.h"
+				>
+			</File>
+			<File
+				RelativePath="stdafx.h"
+				>
+			</File>
+		</Filter>
+		<Filter
+			Name="Resource Files"
+			Filter="rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe"
+			>
+		</Filter>
+		<Filter
+			Name="Novodex Headers"
+			>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx12F32.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx12F64.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx16F32.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx16F64.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx3F32.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx3F64.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx4F32.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx4F64.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx9F32.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\Nx9F64.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxArray.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxBlank.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxBody.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxBounds3.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxBox.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxBoxOffCenter.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxCollision.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxCollisionSDK.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxCompound.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxContact.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxDirectionSyncJoint.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxEffector.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxException.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxFoundation.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxGravityEffector.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxHashGridSpace.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxHeightField.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxHingeJoint.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxJoint.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxLineSegment.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxList.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxMat33.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxMath.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxOrientationSyncJoint.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxPlane.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxPointInPlaneJoint.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxPointOnLineJoint.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxPrismaticJoint.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxQuat.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxRigidBody.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxRigidBodySDK.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxScene.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxShape.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxShapeSet.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxSimpleTypes.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxSlidingJoint.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxSphere.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxSphereOffCenter.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxSphericalJoint.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxSpringAndDamperEffector.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxUserAllocator.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxUserCollisionDetection.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxUserContactReport.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxUserContactVeto.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxUserHeightField.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxUserOutputStream.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\..\..\..\..\..\..\Program Files\NovodeX\Steel1\include\NxVec3.h"
+				>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

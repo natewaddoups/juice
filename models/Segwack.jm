@@ -1,0 +1,19 @@
+<Model FileVersion="1">
+	<Friction>150</Friction>
+	<ERP>1</ERP>
+	<CFM>0.0001</CFM>
+	<StandardSpeed>15</StandardSpeed>
+	<SpeedFactor>1</SpeedFactor>
+	<PoseDelay>1</PoseDelay>
+	<PosePhase>0</PosePhase>
+	<Bodies>
+	</Bodies>
+	<RevoluteJoints>
+	</RevoluteJoints>
+	<PrismaticJoints>
+	</PrismaticJoints>
+	<SphericalJoints>
+	</SphericalJoints>
+	<Behaviors>
+	</Behaviors>
+</Model>

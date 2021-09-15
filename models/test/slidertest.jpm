@@ -1,0 +1,44 @@
+<Model>
+<Body>
+	<Component>
+		<ID>104253616</ID>
+		<Name>Body 1</Name>
+		<Position><X>1</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>104252912</ID>
+		<Name>Body 2</Name>
+		<Position><X>-1</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+
+
+<PrismaticJoint>
+<Joint>
+	<Component>
+		<ID>104653368</ID>
+		<Name>Slider 3</Name>
+		<Position><X>0</X><Y>8.88178e-016</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+<Body1>104253616</Body1>
+<Body2>104252912</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+</PrismaticJoint>
+
+</Model>

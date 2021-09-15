@@ -1,0 +1,478 @@
+<Model>
+<Body>
+	<Component>
+		<ID>9986936</ID>
+		<Name>Center</Name>
+		<Position><X>0</X><Y>-1</Y><Z>3.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>7.5</Y><Z>0.5</Z></Dimensions>
+	<Mass>2</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9987352</ID>
+		<Name>Left Upper Hip</Name>
+		<Position><X>-1</X><Y>0</Y><Z>3.75</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9987688</Twin>
+	</Component>
+	<Dimensions><X>0.5</X><Y>0.5</Y><Z>0.25</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9987688</ID>
+		<Name>Right Upper Hip</Name>
+		<Position><X>1</X><Y>0</Y><Z>3.75</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9987352</Twin>
+	</Component>
+	<Dimensions><X>0.5</X><Y>0.5</Y><Z>0.25</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9988024</ID>
+		<Name>Left Lower Hip</Name>
+		<Position><X>-1</X><Y>3.55271e-015</Y><Z>3.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9988360</Twin>
+	</Component>
+	<Dimensions><X>0.5</X><Y>0.5</Y><Z>0.25</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9988360</ID>
+		<Name>Right Lower Hip</Name>
+		<Position><X>1</X><Y>3.55271e-015</Y><Z>3.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9988024</Twin>
+	</Component>
+	<Dimensions><X>0.5</X><Y>0.5</Y><Z>0.25</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9988696</ID>
+		<Name>Left Thigh</Name>
+		<Position><X>-1</X><Y>-0.75</Y><Z>2.75</Z></Position>
+		<Rotation><H>0</H><P>-45</P><R>0</R></Rotation>
+		<Twin>9989032</Twin>
+	</Component>
+	<Dimensions><X>0.5</X><Y>0.25</Y><Z>2</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9989032</ID>
+		<Name>Right Thigh</Name>
+		<Position><X>1</X><Y>-0.75</Y><Z>2.75</Z></Position>
+		<Rotation><H>0</H><P>-45</P><R>0</R></Rotation>
+		<Twin>9988696</Twin>
+	</Component>
+	<Dimensions><X>0.5</X><Y>0.25</Y><Z>2</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9989368</ID>
+		<Name>Left Shin</Name>
+		<Position><X>-1</X><Y>-0.75</Y><Z>1.25</Z></Position>
+		<Rotation><H>0</H><P>45</P><R>0</R></Rotation>
+		<Twin>9989704</Twin>
+	</Component>
+	<Dimensions><X>0.5</X><Y>0.25</Y><Z>2</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9989704</ID>
+		<Name>Right Shin</Name>
+		<Position><X>1</X><Y>-0.75</Y><Z>1.25</Z></Position>
+		<Rotation><H>0</H><P>45</P><R>0</R></Rotation>
+		<Twin>9989368</Twin>
+	</Component>
+	<Dimensions><X>0.5</X><Y>0.25</Y><Z>2</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9990040</ID>
+		<Name>Right Foot</Name>
+		<Position><X>1</X><Y>-0.25</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9990376</Twin>
+	</Component>
+	<Dimensions><X>1.5</X><Y>2.5</Y><Z>0.25</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9990376</ID>
+		<Name>Left Foot</Name>
+		<Position><X>-1</X><Y>-0.25</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9990040</Twin>
+	</Component>
+	<Dimensions><X>1.5</X><Y>2.5</Y><Z>0.25</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9990712</ID>
+		<Name>Left Wing</Name>
+		<Position><X>2</X><Y>2.25</Y><Z>2.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9991048</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>9991048</ID>
+		<Name>Right Wing</Name>
+		<Position><X>-2</X><Y>2.25</Y><Z>2.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9990712</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9991384</ID>
+		<Name>Left Hip</Name>
+		<Position><X>-1</X><Y>0</Y><Z>3.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>9991728</Twin>
+	</Component>
+<Body1>9988696</Body1>
+<Body2>9988024</Body2>
+</Joint>
+<Length>0.5</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9991728</ID>
+		<Name>Right Hip</Name>
+		<Position><X>1</X><Y>0</Y><Z>3.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>9991384</Twin>
+	</Component>
+<Body1>9989032</Body1>
+<Body2>9988360</Body2>
+</Joint>
+<Length>0.5</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9992072</ID>
+		<Name>Right Leg Lateral Joint</Name>
+		<Position><X>0.75</X><Y>0</Y><Z>3.75</Z></Position>
+		<Rotation><H>0</H><P>90</P><R>0</R></Rotation>
+		<Twin>9992600</Twin>
+	</Component>
+<Body1>9987688</Body1>
+<Body2>9986936</Body2>
+</Joint>
+<Length>0.5</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9992600</ID>
+		<Name>Left Leg Lateral Joint</Name>
+		<Position><X>-0.75</X><Y>0</Y><Z>3.75</Z></Position>
+		<Rotation><H>0</H><P>90</P><R>0</R></Rotation>
+		<Twin>9992072</Twin>
+	</Component>
+<Body1>9987352</Body1>
+<Body2>9986936</Body2>
+</Joint>
+<Length>0.5</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9993056</ID>
+		<Name>Left Ankle</Name>
+		<Position><X>-1</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>9993328</Twin>
+	</Component>
+<Body1>9990376</Body1>
+<Body2>9989368</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9993328</ID>
+		<Name>Right Ankle</Name>
+		<Position><X>1</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>9993056</Twin>
+	</Component>
+<Body1>9990040</Body1>
+<Body2>9989704</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9993672</ID>
+		<Name>Left Knee</Name>
+		<Position><X>-1</X><Y>-1.5</Y><Z>2</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>9994016</Twin>
+	</Component>
+<Body1>9989368</Body1>
+<Body2>9988696</Body2>
+</Joint>
+<Length>0.5</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9994016</ID>
+		<Name>Right Knee</Name>
+		<Position><X>1</X><Y>-1.5</Y><Z>2</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>9993672</Twin>
+	</Component>
+<Body1>9989704</Body1>
+<Body2>9989032</Body2>
+</Joint>
+<Length>0.5</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9994360</ID>
+		<Name>Left Rotator</Name>
+		<Position><X>-1</X><Y>8.88178e-015</Y><Z>3.625</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9994704</Twin>
+	</Component>
+<Body1>9988024</Body1>
+<Body2>9987352</Body2>
+</Joint>
+<Length>-0.25</Length>
+<Diameter>1</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9994704</ID>
+		<Name>Right Rotator</Name>
+		<Position><X>1</X><Y>8.88178e-015</Y><Z>3.625</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>9994360</Twin>
+	</Component>
+<Body1>9988360</Body1>
+<Body2>9987688</Body2>
+</Joint>
+<Length>-0.25</Length>
+<Diameter>1</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9995048</ID>
+		<Name>Left Shoulder</Name>
+		<Position><X>-0.5</X><Y>2.25</Y><Z>3.5</Z></Position>
+		<Rotation><H>0</H><P>90</P><R>0</R></Rotation>
+		<Twin>9995392</Twin>
+	</Component>
+<Body1>9986936</Body1>
+<Body2>9990712</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>9995392</ID>
+		<Name>Right Shoulder</Name>
+		<Position><X>0.5</X><Y>2.25</Y><Z>3.5</Z></Position>
+		<Rotation><H>0</H><P>90</P><R>0</R></Rotation>
+		<Twin>9995048</Twin>
+	</Component>
+<Body1>9986936</Body1>
+<Body2>9991048</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+
+
+<Behavior>
+<Name>Behavior 22</Name>
+<Enabled>1</Enabled>
+<MotionLink>
+	<JointID>9991384</JointID>
+	<Enabled>1</Enabled>
+	<Phase>0</Phase>
+	<Amplitude>15</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>10</GainI>
+	<GainD>0</GainD>
+	<MaxForce>250</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9991728</JointID>
+	<Enabled>1</Enabled>
+	<Phase>180</Phase>
+	<Amplitude>15</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>10</GainI>
+	<GainD>0</GainD>
+	<MaxForce>250</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9992072</JointID>
+	<Enabled>1</Enabled>
+	<Phase>-90</Phase>
+	<Amplitude>20</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>10</GainI>
+	<GainD>0</GainD>
+	<MaxForce>250</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9992600</JointID>
+	<Enabled>1</Enabled>
+	<Phase>-90</Phase>
+	<Amplitude>20</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>10</GainI>
+	<GainD>0</GainD>
+	<MaxForce>250</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9993056</JointID>
+	<Enabled>1</Enabled>
+	<Phase>225</Phase>
+	<Amplitude>15</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>50</GainI>
+	<GainD>10</GainD>
+	<MaxForce>250</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9993328</JointID>
+	<Enabled>1</Enabled>
+	<Phase>45</Phase>
+	<Amplitude>15</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>50</GainI>
+	<GainD>10</GainD>
+	<MaxForce>250</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9993672</JointID>
+	<Enabled>1</Enabled>
+	<Phase>90</Phase>
+	<Amplitude>15</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>10</GainI>
+	<GainD>10</GainD>
+	<MaxForce>250</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9994016</JointID>
+	<Enabled>1</Enabled>
+	<Phase>-90</Phase>
+	<Amplitude>15</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>10</GainI>
+	<GainD>10</GainD>
+	<MaxForce>250</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9994360</JointID>
+	<Enabled>1</Enabled>
+	<Phase>0</Phase>
+	<Amplitude>0</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>100</GainI>
+	<GainD>0</GainD>
+	<MaxForce>300</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9994704</JointID>
+	<Enabled>1</Enabled>
+	<Phase>0</Phase>
+	<Amplitude>0</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>100</GainI>
+	<GainD>0</GainD>
+	<MaxForce>300</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9995048</JointID>
+	<Enabled>1</Enabled>
+	<Phase>-90</Phase>
+	<Amplitude>15</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>0</GainI>
+	<GainD>0</GainD>
+	<MaxForce>100</MaxForce></MotionLink>
+<MotionLink>
+	<JointID>9995392</JointID>
+	<Enabled>1</Enabled>
+	<Phase>-90</Phase>
+	<Amplitude>15</Amplitude>
+	<Offset>0</Offset>
+	<GainP>10</GainP>
+	<GainI>0</GainI>
+	<GainD>0</GainD>
+	<MaxForce>100</MaxForce></MotionLink>
+</Behavior>
+
+</Model>

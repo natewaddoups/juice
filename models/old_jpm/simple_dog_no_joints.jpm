@@ -1,0 +1,101 @@
+<Model>
+<Body>
+	<Component>
+		<ID>104842720</ID>
+		<Name>Rear Right Shin</Name>
+		<Position><X>1</X><Y>-2</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>-15</P><R>0</R></Rotation>
+		<Twin>9488296</Twin>
+	</Component>
+	<Dimensions><X>0.25</X><Y>0.25</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>9488296</ID>
+		<Name>Rear Left Shin</Name>
+		<Position><X>-1</X><Y>-2</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>-15</P><R>0</R></Rotation>
+		<Twin>104842720</Twin>
+	</Component>
+	<Dimensions><X>0.25</X><Y>0.25</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>9488536</ID>
+		<Name>Rear Right Thigh</Name>
+		<Position><X>-1</X><Y>-2</Y><Z>1.5</Z></Position>
+		<Rotation><H>0</H><P>15</P><R>0</R></Rotation>
+		<Twin>9489024</Twin>
+	</Component>
+	<Dimensions><X>0.25</X><Y>0.25</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>9489024</ID>
+		<Name>Rear Left Thigh</Name>
+		<Position><X>1</X><Y>-2</Y><Z>1.5</Z></Position>
+		<Rotation><H>0</H><P>15</P><R>0</R></Rotation>
+		<Twin>9488536</Twin>
+	</Component>
+	<Dimensions><X>0.25</X><Y>0.25</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>9489264</ID>
+		<Name>Front Right Shin</Name>
+		<Position><X>1</X><Y>2</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>-15</P><R>0</R></Rotation>
+		<Twin>9489752</Twin>
+	</Component>
+	<Dimensions><X>0.25</X><Y>0.25</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>9489752</ID>
+		<Name>Front Left Shin</Name>
+		<Position><X>-1</X><Y>2</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>-15</P><R>0</R></Rotation>
+		<Twin>9489264</Twin>
+	</Component>
+	<Dimensions><X>0.25</X><Y>0.25</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>9489992</ID>
+		<Name>Front Right Thigh</Name>
+		<Position><X>-1</X><Y>2</Y><Z>1.5</Z></Position>
+		<Rotation><H>0</H><P>15</P><R>0</R></Rotation>
+		<Twin>104843312</Twin>
+	</Component>
+	<Dimensions><X>0.25</X><Y>0.25</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>104843312</ID>
+		<Name>Front Left Thigh</Name>
+		<Position><X>1</X><Y>2</Y><Z>1.5</Z></Position>
+		<Rotation><H>0</H><P>15</P><R>0</R></Rotation>
+		<Twin>9489992</Twin>
+	</Component>
+	<Dimensions><X>0.25</X><Y>0.25</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>104843648</ID>
+		<Name>Torso</Name>
+		<Position><X>0</X><Y>0</Y><Z>2</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>2</X><Y>4</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+</Model>

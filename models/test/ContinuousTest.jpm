@@ -1,0 +1,58 @@
+<Model>
+<StandardSpeed>15</StandardSpeed><SpeedFactor>2</SpeedFactor><PoseDelay>1</PoseDelay><Body>
+	<Component>
+		<ID>76440792</ID>
+		<Name>Body 5</Name>
+		<Position><X>-1</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>3</X><Y>3</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>76441200</ID>
+		<Name>Body 7</Name>
+		<Position><X>-1</X><Y>0</Y><Z>2</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>76441528</ID>
+		<Name>Hinge 6</Name>
+		<Position><X>-1</X><Y>0</Y><Z>2</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+<Body1>76440792</Body1>
+<Body2>76441200</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+
+
+
+<Behavior>
+<Name>Behavior 8</Name>
+<Enabled>1</Enabled>
+<MotionLink>
+	<JointID>76441528</JointID>
+	<Enabled>1</Enabled>
+	<MotionType>4</MotionType>	<Phase>0</Phase>
+	<Amplitude>0</Amplitude>
+	<Offset>0</Offset>
+	<Gain>10</Gain>
+	<MaxForce>50</MaxForce></MotionLink>
+</Behavior>
+
+</Model>

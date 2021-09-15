@@ -1,0 +1,951 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\JuicePlay.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\icon1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TB_MAIN             BITMAP                  "res\\Toolbar.bmp"
+IDR_TB_APPMODES         BITMAP                  "res\\toolbar1.bmp"
+IDR_TB_EDITMODES        BITMAP                  "res\\toolbar2.bmp"
+IDR_TB_VIEWS            BITMAP                  "res\\bmp00001.bmp"
+IDR_TB_SPEED            BITMAP                  "res\\bmp00002.bmp"
+IDR_TB_ADD              BITMAP                  "res\\bmp00003.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TB_MAIN TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_FILE_NEW
+    BUTTON      ID_FILE_OPEN
+    BUTTON      ID_FILE_SAVE
+    SEPARATOR
+    BUTTON      ID_EDIT_CUT
+    BUTTON      ID_EDIT_COPY
+    BUTTON      ID_EDIT_PASTE
+END
+
+IDR_TB_APPMODES TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_MODE_DESIGN
+    BUTTON      ID_MODE_PLAY
+    BUTTON      ID_MODE_PAUSE
+    BUTTON      ID_TACK
+END
+
+IDR_TB_EDITMODES TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_EDIT_SYMMETRICEDITING
+    BUTTON      ID_MODE_SNAP
+    BUTTON      ID_MODE_FOLLOW
+END
+
+IDR_TB_VIEWS TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_VIEW_SIDE
+    BUTTON      ID_VIEW_FRONT
+    BUTTON      ID_VIEW_TOP
+    BUTTON      ID_VIEW_CORNER
+    BUTTON      ID_VIEW_LOOKATSELECTION
+END
+
+IDR_TB_ADD TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_EDIT_ADDBEAM
+    BUTTON      ID_EDIT_ADDHINGE
+    BUTTON      ID_EDIT_ADDSLIDER
+    BUTTON      ID_EDIT_ADDBALLJOINT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&New\tCtrl+N",                ID_FILE_NEW
+        MENUITEM "&Open\tCtrl+O",               ID_FILE_OPEN
+        MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
+        MENUITEM "Save &As",                    ID_FILE_SAVEAS
+        POPUP "&Generate"
+        BEGIN
+            MENUITEM "&Snake...",                   ID_GENERATE_SNAKE
+            MENUITEM "&Manypede...",                ID_GENERATE_MANYPEDE
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_APP_EXIT
+        MENUITEM SEPARATOR
+        MENUITEM " ",                           ID_FILE_MRU_FIRES
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Undo\tCtrl+Z",               ID_EDIT_UNDO
+        MENUITEM "&Redo\tCtrl+Y",               ID_EDIT_REDO
+        MENUITEM SEPARATOR
+        MENUITEM "Cu&t\tCtrl+X",                ID_EDIT_DELETE
+        MENUITEM "&Copy\tCtrl+C",               ID_EDIT_COPY
+        MENUITEM "&Paste\tCtrl+V",              ID_EDIT_PASTE
+        MENUITEM "&Delete\tDel",                ID_EDIT_DELETE
+        MENUITEM SEPARATOR
+        MENUITEM "Select &All\tCtrl+A",         ID_EDIT_SELECTALL
+        MENUITEM SEPARATOR
+        MENUITEM "&Symmetric Editing",          ID_EDIT_SYMMETRICEDITING
+        , CHECKED
+        MENUITEM SEPARATOR
+        MENUITEM "Add &Beam\tShift+B",          ID_EDIT_ADDBEAM
+        MENUITEM "Add &Hinge\tShift+H",         ID_EDIT_ADDHINGE
+        MENUITEM "Add &Slider\tShift+S",        ID_EDIT_ADDSLIDER
+        MENUITEM "Add Ball &Joint\tShift+J",    ID_EDIT_ADDBALLJOINT
+        MENUITEM "Add Clockwork B&ehavior",     ID_EDIT_ADD_CLOCKWORK_BEHAVIOR
+
+        MENUITEM "Add &Network Behavior",       ID_EDIT_ADD_NETWORK_BEHAVIOR
+    END
+    POPUP "&View"
+    BEGIN
+        MENUITEM "New &3D Window",              ID_VIEW_NEW3DWINDOW
+        MENUITEM "New &Motion Window",          ID_VIEW_NEWMOTIONSOURCEWINDOW
+
+        MENUITEM SEPARATOR
+        MENUITEM "&Look At Selection",          ID_VIEW_LOOKATSELECTION
+        MENUITEM SEPARATOR
+        MENUITEM "&Top",                        ID_VIEW_TOP
+        MENUITEM "&Front",                      ID_VIEW_FRONT
+        MENUITEM "&Side",                       ID_VIEW_SIDE
+        MENUITEM "&Corner",                     ID_VIEW_CORNER
+        MENUITEM SEPARATOR
+        POPUP "Tool&bars"
+        BEGIN
+            MENUITEM "&Restore Standard Layout",    ID_TOOLBARS_RESTORESTANDARDLAYOUT
+
+            MENUITEM SEPARATOR
+            MENUITEM "&Standard",                   170
+            MENUITEM "&View Directions",            175
+            MENUITEM "&Design / Operation Modes",   171
+            MENUITEM "&Edit Modes",                 173
+        END
+        MENUITEM "S&tatus Bar",                 ID_VIEW_STATUS_BAR
+    END
+    POPUP "&Mode"
+    BEGIN
+        MENUITEM "&Design",                     ID_MODE_DESIGN
+        MENUITEM "&Play",                       ID_MODE_PLAY
+        MENUITEM "P&ause",                      ID_MODE_PAUSE
+        MENUITEM "&Train...",                   ID_MODE_TRAIN
+        MENUITEM SEPARATOR
+        MENUITEM "Drag XY (&Ground)",           ID_DRAG_XY
+        MENUITEM "Drag XZ (&Front)",            ID_DRAG_XZ
+        MENUITEM "Drag YZ (&Side)",             ID_DRAG_YZ
+        MENUITEM SEPARATOR
+        MENUITEM "S&nap",                       ID_MODE_SNAP
+        MENUITEM "&Follow",                     ID_MODE_FOLLOW
+    END
+    POPUP "&Terrain"
+    BEGIN
+        MENUITEM "&New...",                     ID_TERRAIN_NEW
+        MENUITEM "&Open...",                    ID_TERRAIN_OPEN
+        MENUITEM "&Save As...",                 ID_TERRAIN_SAVEAS
+        MENUITEM "&Enabled",                    ID_TERRAIN_ENABLE
+    END
+    POPUP "&Options"
+    BEGIN
+        MENUITEM "General...",                  ID_OPTIONS_GENERAL
+        MENUITEM "&Model...",                   ID_OPTIONS_MODEL
+        MENUITEM "&Colors...",                  ID_OPTIONS_COLORS
+        MENUITEM SEPARATOR
+        MENUITEM "Choose &Dynamics Library...", ID_OPTIONS_CHOOSEDYNAMICSLIBRARY
+
+        MENUITEM "&Set Physical Constants...",  ID_OPTIONS_PHYSICSPARAMETERS
+        MENUITEM SEPARATOR
+        MENUITEM "Begin &Video Capture",        ID_OPTIONS_VIDEOCAPTURE
+    END
+    POPUP "&Window"
+    BEGIN
+        MENUITEM "&Cascade",                    ID_WINDOW_CASCADE
+        MENUITEM "&Tile",                       ID_WINDOW_TILE_HORZ
+        MENUITEM "&Arrange Icons",              ID_WINDOW_ARRANGE
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "Online Documentation...",     ID_HELP_WEBSITE
+        MENUITEM "Online Discussion Forum...",  ID_HELP_DISCUSS
+        MENUITEM "&About Juice...",             ID_APP_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "A",            ID_EDIT_SELECTALL,      VIRTKEY, CONTROL, NOINVERT
+    "C",            ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    "N",            ID_FILE_NEW,            VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_FILE_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    "V",            ID_EDIT_PASTE,          VIRTKEY, CONTROL, NOINVERT
+    VK_BACK,        ID_EDIT_UNDO,           VIRTKEY, ALT, NOINVERT
+    VK_DELETE,      ID_EDIT_DELETE,         VIRTKEY, NOINVERT
+    VK_DELETE,      ID_EDIT_CUT,            VIRTKEY, SHIFT, NOINVERT
+    VK_F6,          ID_NEXT_PANE,           VIRTKEY, NOINVERT
+    VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT, NOINVERT
+    VK_INSERT,      ID_EDIT_COPY,           VIRTKEY, CONTROL, NOINVERT
+    VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT, NOINVERT
+    "X",            ID_EDIT_DELETE,         VIRTKEY, CONTROL, NOINVERT
+    "Z",            ID_EDIT_UNDO,           VIRTKEY, CONTROL, NOINVERT
+    "B",            ID_EDIT_ADDBEAM,        VIRTKEY, SHIFT, NOINVERT
+    "H",            ID_EDIT_ADDHINGE,       VIRTKEY, SHIFT, NOINVERT
+    "S",            ID_EDIT_ADDSLIDER,      VIRTKEY, SHIFT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 232, 82
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "About Juice"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    CTEXT           "Juice v163",IDC_STATIC,36,6,132,8,SS_NOPREFIX
+    ICON            IDR_MAINFRAME,IDC_STATIC,6,6,20,20
+    CTEXT           "Copyright 2001-2002 Nate Waddoups\nhttp://www.natew.com/juice/",
+                    IDC_STATIC,30,24,144,18
+    DEFPUSHBUTTON   "OK",IDOK,174,6,50,14,WS_GROUP
+    CTEXT           "Juice Includes ODE\nCopyright 2001-2002 Russel L. Smith, PhD.\nhttp://q12.org/ode/",
+                    IDC_STATIC,30,48,144,24
+END
+
+IDD_USERPREFDLG DIALOGEX 0, 0, 160, 101
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Preferences"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Snap &Resolution",IDC_STATIC,6,6,66,8
+    EDITTEXT        IDC_SNAPRESOLUTION,6,18,66,12,ES_AUTOHSCROLL
+    LTEXT           "Cage &Size",IDC_STATIC,6,42,66,8
+    EDITTEXT        IDC_CAGESIZE,6,54,66,12,ES_AUTOHSCROLL
+    LTEXT           "Static",IDC_HELPTEXT,84,6,66,60
+    DEFPUSHBUTTON   "OK",IDOK,24,78,48,14
+    PUSHBUTTON      "Cancel",IDCANCEL,84,78,48,14
+END
+
+IDD_COLORS DIALOGEX 0, 0, 250, 106
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Colors"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Display Element",IDC_STATIC,6,6,114,8
+    LISTBOX         IDC_COLORLIST,6,18,174,60,LBS_NOINTEGRALHEIGHT | 
+                    WS_VSCROLL | WS_GROUP | WS_TABSTOP
+    PUSHBUTTON      "&Choose Color",IDC_CHOOSECOLOR,114,84,50,14
+    DEFPUSHBUTTON   "OK",IDOK,192,6,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,192,24,50,14
+    LTEXT           "Static",IDC_COLORSAMPLE,42,84,42,12
+END
+
+IDD_SPEEDBAR DIALOGEX 0, 0, 184, 16
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_SPEED,"msctls_trackbar32",TBS_BOTH | TBS_NOTICKS | 
+                    WS_TABSTOP,40,4,84,9
+    LTEXT           "Reverse",IDC_STATIC,9,3,28,8
+    LTEXT           "Forward",IDC_STATIC,127,3,28,8
+    LTEXT           "200%",IDC_SPEED_PERCENT,160,3,21,8
+END
+
+IDD_TERRAIN_NEW DIALOGEX 0, 0, 328, 178
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Create New Terrain "
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "&Elevation Map",IDC_STATIC,6,6,60,8
+    EDITTEXT        IDC_TERRAIN_TEXTURE_ELEVATION,6,18,132,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse...",IDC_BROWSE_ELEVATION,144,18,50,14
+    LTEXT           "&Terrain Coloring",IDC_STATIC,6,42,50,8
+    EDITTEXT        IDC_TERRAIN_TEXTURE_BASE,6,54,132,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse...",IDC_BROWSE_TEXTURE_COARSE,144,54,50,14
+    LTEXT           "&Detailed Texture",IDC_STATIC,6,78,53,8
+    EDITTEXT        IDC_TERRAIN_TEXTURE_DETAILED,6,90,132,14,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse...",IDC_BROWSE_TEXTURE_DETAILED,144,90,50,14
+    LTEXT           "&Horizontal Scale",IDC_STATIC,6,114,52,8
+    EDITTEXT        IDC_TERRAIN_SCALE_HORIZONTAL,6,126,54,14,ES_AUTOHSCROLL
+    LTEXT           "&Vertical Scale",IDC_STATIC,72,114,44,8
+    EDITTEXT        IDC_TERRAIN_SCALE_VERTICAL,72,126,54,14,ES_AUTOHSCROLL
+    LTEXT           "&Triangle Count",IDC_STATIC,138,114,47,8
+    EDITTEXT        IDC_TERRAIN_TRIANGLECOUNT,138,126,54,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_HELPTEXT,204,12,114,126
+    DEFPUSHBUTTON   "OK",IDOK,90,156,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,150,156,50,14
+END
+
+IDD_MICRODIALOG DIALOGEX 0, 0, 94, 15
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_BORDER
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_GENERATE_SNAKE DIALOGEX 0, 0, 186, 197
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Generate Snake"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Number of &segments",IDC_STATIC,6,12,67,8
+    EDITTEXT        IDC_SNAKE_NUMBER_SEGMENTS,6,24,40,14,ES_AUTOHSCROLL
+    LTEXT           "Number of concurrent &cycles",IDC_STATIC,6,48,92,8
+    EDITTEXT        IDC_SNAKE_NUMBER_CYCLES,6,60,40,14,ES_AUTOHSCROLL
+    LTEXT           "Phase &difference",IDC_STATIC,6,84,55,8
+    EDITTEXT        IDC_SNAKE_PHASE_DIFFERENCE,6,96,40,14,ES_AUTOHSCROLL
+    LTEXT           "&Horizontal range",IDC_STATIC,6,120,54,8
+    EDITTEXT        IDC_SNAKE_HORIZONTAL,6,132,40,14,ES_AUTOHSCROLL
+    LTEXT           "&Vertical range",IDC_STATIC,6,156,45,8
+    EDITTEXT        IDC_SNAKE_VERTICAL,6,168,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    LTEXT           "",IDC_HELPTEXT,72,66,102,120
+END
+
+IDD_GENERATE_MANYPEDE DIALOGEX 0, 0, 186, 197
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Generate Manypede"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "Number of &segments",-1,6,12,67,8
+    EDITTEXT        IDC_MANYPEDE_NUMBER_SEGMENTS,6,24,40,14,ES_AUTOHSCROLL
+    LTEXT           "&Horizontal range",-1,6,48,54,8
+    EDITTEXT        IDC_MANYPEDE_HORIZONTAL,6,60,40,14,ES_AUTOHSCROLL
+    LTEXT           "&Vertical range",-1,6,84,45,8
+    EDITTEXT        IDC_MANYPEDE_VERTICAL,6,96,40,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    LTEXT           "",IDC_HELPTEXT,72,66,102,120
+END
+
+IDD_MODEL DIALOGEX 0, 0, 190, 125
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Model Parameters"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "&Speed",IDC_STATIC,6,6,36,8
+    EDITTEXT        IDC_MODEL_SPEED,48,6,40,14,ES_AUTOHSCROLL
+    LTEXT           "Pose &Delay",IDC_STATIC,6,24,37,8
+    EDITTEXT        IDC_MODEL_POSEDELAY,48,24,40,14,ES_AUTOHSCROLL
+    LTEXT           "Pose &Phase",IDC_STATIC,6,42,39,8
+    EDITTEXT        IDC_MODEL_POSEPHASE,48,42,40,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_HELPTEXT,96,6,84,84
+    DEFPUSHBUTTON   "OK",IDOK,42,102,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,102,102,50,14
+END
+
+IDD_TRAINING DIALOGEX 0, 0, 322, 263
+STYLE DS_SETFONT | DS_MODALFRAME | DS_3DLOOK | WS_POPUP | WS_CAPTION
+CAPTION "Training"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "&Initialize",IDC_NEW,114,114,48,14
+    PUSHBUTTON      "&Close",IDC_EXIT,264,240,50,14
+    RTEXT           "Population Size:",IDC_STATIC,18,81,54,8
+    EDITTEXT        IDC_POPULATION_SIZE,78,78,42,14,ES_AUTOHSCROLL
+    RTEXT           "Trial duration, in seconds:",IDC_STATIC,30,228,84,12
+    EDITTEXT        IDC_DURATION,120,228,42,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "&Train",IDC_GO,222,54,50,14,WS_DISABLED
+    LTEXT           "&Behavior to train:",IDC_STATIC,18,18,84,8
+    LTEXT           "",IDC_STATUS,186,156,126,54
+    LTEXT           "Previous generation best score: n/a",IDC_BESTSCORE,186,
+                    126,126,24
+    LTEXT           "Previous score: n/a",IDC_PREVSCORE,186,96,126,24
+    CONTROL         "Use data from selected behavior",IDC_INIT_EXISTING,
+                    "Button",BS_AUTORADIOBUTTON,18,96,124,12
+    CONTROL         "Use random values",IDC_INIT_RANDOM,"Button",
+                    BS_AUTORADIOBUTTON,18,114,90,10
+    EDITTEXT        IDC_CROSSOVER,120,174,42,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_SURVIVORS,120,156,42,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MUTATIONPERCENTAGE,120,193,42,14,ES_AUTOHSCROLL
+    EDITTEXT        IDC_MUTATIONAMOUNT,120,210,42,14,ES_AUTOHSCROLL
+    LTEXT           "Gene crossover percentage:",IDC_STATIC,24,174,90,8,0,
+                    WS_EX_RIGHT
+    LTEXT           "Mutation percentage:",IDC_STATIC,24,193,90,8,0,
+                    WS_EX_RIGHT
+    LTEXT           "Mutation amount:",IDC_STATIC,24,210,90,8,0,WS_EX_RIGHT
+    LTEXT           "Number of survivors:",IDC_STATIC,24,156,90,8,0,
+                    WS_EX_RIGHT
+    LISTBOX         IDC_BEHAVIOR,18,30,144,42,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    GROUPBOX        "Population",IDC_STATIC,6,6,168,132
+    GROUPBOX        "Genetic Algorithm Parameters",IDC_STATIC,6,144,168,108
+    PUSHBUTTON      "&Restore Best",IDC_RESTORE,222,72,50,14
+    COMBOBOX        IDC_COMBO1,186,30,126,30,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    LTEXT           "Selection Criterion:",IDC_STATIC,186,18,84,8
+END
+
+IDD_DIALOG1 DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+END
+
+IDD_DYNAMICSFACTORIES DIALOGEX 0, 0, 186, 95
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Choose Dynamics Library"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LISTBOX         IDC_LIBRARIES,7,26,111,62,LBS_SORT | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    DEFPUSHBUTTON   "OK",IDOK,129,7,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,129,24,50,14
+    LTEXT           "Select a dynamics library from the list below.",
+                    IDC_STATIC,6,6,114,18
+END
+
+IDD_OPTIONS DIALOGEX 0, 0, 190, 173
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Options"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "Minimum Delta",IDC_STATIC,6,12,48,12
+    EDITTEXT        IDC_MINDELTA,56,12,40,14,ES_AUTOHSCROLL
+    LTEXT           "Maximum Delta",IDC_STATIC,6,30,49,8
+    EDITTEXT        IDC_MAXDELTA,56,30,40,14,ES_AUTOHSCROLL
+    LTEXT           "",IDC_STATIC,6,48,42,8
+    EDITTEXT        IDC_BOUNCE,56,48,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "",IDC_STATIC,6,66,42,8
+    EDITTEXT        IDC_ERP,56,66,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "",IDC_STATIC,6,84,42,8
+    EDITTEXT        IDC_CFM,56,84,40,14,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "",IDC_HELPTEXT,108,6,72,120
+    LTEXT           "",IDC_ITERATIONS_ST,6,102,42,8
+    EDITTEXT        IDC_ITERATIONS,56,102,40,14,ES_AUTOHSCROLL | NOT 
+                    WS_VISIBLE
+    DEFPUSHBUTTON   "OK",IDOK,42,144,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,102,144,50,14
+END
+
+IDD_TRAINING2 DIALOGEX 0, 0, 226, 191
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "Genetic Algorithm Training"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,168,168,50,14
+    CONTROL         "",IDC_TAB1,"SysTabControl32",0x0,6,6,210,156
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,0,0,0
+ PRODUCTVERSION 0,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Nate Waddoups"
+            VALUE "FileDescription", "Juice"
+            VALUE "FileVersion", "67"
+            VALUE "InternalName", "Juice Editor"
+            VALUE "LegalCopyright", "(c) Nate Waddoups.  All rights reserved."
+            VALUE "OriginalFilename", "Juiceplay.exe"
+            VALUE "ProductName", "Juice"
+            VALUE "ProductVersion", "beta"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 225
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_USERPREFDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 153
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_COLORS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 243
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_SPEEDBAR, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 170
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 11
+    END
+
+    IDD_TERRAIN_NEW, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 171
+    END
+
+    IDD_MICRODIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 87
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 8
+    END
+
+    IDD_GENERATE_SNAKE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    IDD_GENERATE_MANYPEDE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    IDD_MODEL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 183
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 118
+    END
+
+    IDD_TRAINING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 315
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 256
+    END
+
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_DYNAMICSFACTORIES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_OPTIONS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 183
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_TRAINING2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 219
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 184
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Juice\nJuice\nJuice"
+    IDS_APPNAME             "Juice"
+    IDR_FRAME_3D            "\n3D View\n"
+    IDR_FRAME_COMPONENTS    "\nComponents\n"
+    IDR_FRAME_MOTION        "\nMotion\n"
+    IDR_FRAME_PROPERTIES    "\nProperties\n"
+    ID_MODE_DESIGN          "Alter the model's structure or behavior\nDesign"
+    ID_MODE_PAUSE           "Stop the model's main engine\nPause"
+    ID_MODE_CRESCENDO       "Start with tiny movements, gradualling increasing to normal movements"
+    ID_MODE_POSEANDSTART    "Assume a static pose, then begin moving."
+    ID_OPTIONS_COLORS       "Set color preferences"
+    ID_OPTIONS_PHYSICSPARAMETERS "Set physics parameters"
+    ID_VIEW_TOP             "View the model from the top\nTop View"
+    ID_VIEW_FRONT           "View the model from the front\nFront View"
+    ID_VIEW_SIDE            "View the model from the side\nSide View"
+    ID_VIEW_CORNER          "View the model from the corner\nCorner View"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_APP_TITLE       "Juice"
+    AFX_IDS_IDLEMESSAGE     "Ready"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_INDICATOR_EXT        "EXT"
+    ID_INDICATOR_CAPS       "CAP"
+    ID_INDICATOR_NUM        "NUM"
+    ID_INDICATOR_SCRL       "SCRL"
+    ID_INDICATOR_OVR        "OVR"
+    ID_INDICATOR_REC        "REC"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_FILE_NEW             "Create a new model\nNew"
+    ID_FILE_OPEN            "Open a model from disk\nOpen"
+    ID_FILE_CLOSE           "Close the active document\nClose"
+    ID_FILE_SAVE            "Save the model to disk\nSave"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_APP_ABOUT            "Display program information, version number and copyright\nAbout"
+    ID_APP_EXIT             "Quit the application; prompts to save documents\nExit"
+    IDS_CAPTION_MOTIONVIEW  "Motion"
+    IDS_CAPTION_TEXTVIEW    "Components"
+    IDS_CAPTION_3DVIEW      "3D View"
+    IDS_CAPTION_PROPERTIESVIEW "Properties"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_NEXT_PANE            "Switch to the next window pane\nNext Pane"
+    ID_PREV_PANE            "Switch back to the previous window pane\nPrevious Pane"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_WINDOW_ARRANGE       "Arrange icons at the bottom of the window\nArrange Icons"
+    ID_WINDOW_CASCADE       "Arrange windows so they overlap\nCascade Windows"
+    ID_WINDOW_TILE_HORZ     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_TILE_VERT     "Arrange windows as non-overlapping tiles\nTile Windows"
+    ID_WINDOW_SPLIT         "Split the active window into panes\nSplit"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_CLEAR           "Erase the selection\nErase"
+    ID_EDIT_CLEAR_ALL       "Erase everything\nErase All"
+    ID_EDIT_COPY            "Copy the selection and put it on the Clipboard\nCopy"
+    ID_EDIT_FIND            "Find the specified text\nFind"
+    ID_EDIT_PASTE           "Insert Clipboard contents\nPaste"
+    ID_EDIT_REPEAT          "Repeat the last action\nRepeat"
+    ID_EDIT_REPLACE         "Replace specific text with different text\nReplace"
+    ID_EDIT_SELECT_ALL      "Select the entire document\nSelect All"
+    ID_EDIT_UNDO            "Undo the last action\nUndo"
+    ID_EDIT_REDO            "Redo the previously undone action\nRedo"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_DELETE          "Cut the selection and put it on the Clipboard\nCut"
+    ID_MODE_SNAP            "Snap components to grid positions while dragging\nSnap"
+    ID_FILE_SAVEAS          "Save the model to disk under a new name"
+    ID_VIEW_LOOKATSELECTION "Aim 3D view ""cameras"" at center of selected objects (or center of model, if no objects are selected)\nLook At Selection"
+    ID_EDIT_SELECTALL       "Select all components"
+    170                     "File and clipboard actions"
+    IDR_TB_APPMODES         "Design, operation, pause"
+    IDR_TB_EDITMODES        "Symmetric editing, snap"
+    IDR_TB_VIEWS            "Top, front, side, corner views"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_TOOLBAR         "Show or hide the toolbar\nToggle ToolBar"
+    ID_VIEW_STATUS_BAR      "Show or hide the status bar\nToggle StatusBar"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCSIZE          "Change the window size"
+    AFX_IDS_SCMOVE          "Change the window position"
+    AFX_IDS_SCMINIMIZE      "Reduce the window to an icon"
+    AFX_IDS_SCMAXIMIZE      "Enlarge the window to full size"
+    AFX_IDS_SCNEXTWINDOW    "Switch to the next document window"
+    AFX_IDS_SCPREVWINDOW    "Switch to the previous document window"
+    AFX_IDS_SCCLOSE         "Close the active window and prompts to save the documents"
+END
+
+STRINGTABLE 
+BEGIN
+    AFX_IDS_SCRESTORE       "Restore the window to normal size"
+    AFX_IDS_SCTASKLIST      "Activate Task List"
+    AFX_IDS_MDICHILD        "Activate this window"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_3D_INITFAILED       "Application fault code 001\nUnable to begin."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_VIEW_NEWMOTIONSOURCEWINDOW "Create a new motion window."
+    ID_EDIT_ADDMOTION       "Add a new motion to the currently selected behavior"
+    IDS_NODYNAMICSDLL       "Unable to locate dynamics library.  Exiting."
+    ID_DRAG_XY              "Set the drag plane to the top-view plane"
+    ID_DRAG_XZ              "Set the drag plane to the front-view plane"
+    ID_DRAG_YZ              "Set the drag plane to the side-view plane"
+    ID_EDIT_ADDSLIDER       "Add a new slider to the model\nAdd Slider"
+    ID_VIEW_NEW3DWINDOW     "Create a new 3D view window"
+    ID_EDIT_ADDBEAM         "Add a new beam to the model\nAdd Beam"
+    ID_EDIT_ADDHINGE        "Add a new hinge to the model\nAdd Hinge"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_STATUS_DRAG          "          "
+    ID_STATUS_FRAMERATE     "            "
+END
+
+STRINGTABLE 
+BEGIN
+    ID_TB_VIEW_SIDE         "Side View"
+    ID_TB_VIEW_FRONT        "Front View"
+    ID_TB_VIEW_TOP          "Top View"
+    ID_TB_VIEW_CORNER       "Corner View"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_EDIT_ADD_CLOCKWORK_BEHAVIOR "Add a new set of motions to the model"
+    ID_EDIT_SYMMETRICEDITING 
+                            "Enable / disable symmetric editing\nSymmetric Editing"
+    ID_TOOLBARS_RESTORESTANDARDLAYOUT 
+                            "Place all toolbars at the top of the window"
+    ID_OPTIONS_MODEL        "Adjust model parameters"
+    ID_MODE_PLAY            "Put the model into motion\nPlay"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_PROMPTSAVE_MESSAGE  "This model has changed since you last saved it.\nWould you like to save it before continuing?"
+END
+
+STRINGTABLE 
+BEGIN
+    ID_MODE_FOLLOW          "Follow the model as it moves\nFollow"
+    ID_HELP_WEBSITE         "Go to the web site."
+    ID_TACK                 "Prevent the selected beam from moving during simulation\nTack"
+    ID_GENERATE_SNAKE       "Generate a snake"
+    ID_GENERATE_MANYPEDE    "Generate a creature with many pairs of legs"
+    ID_OPTIONS_VIDEOCAPTURE "Begin recording movie (debug builds only - this feature is unfinished and unstable)"
+    ID_EDIT_ADD_NETWORK_BEHAVIOR "Add a new set of motions to the model"
+    ID_EDIT_ADDBALLJOINT    "Add a new ball joint to the model"
+    ID_TERRAIN_NEW          "Create terrain from elevation and image files"
+    ID_TERRAIN_SAVEAS       "Save the current terrain parameters"
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_FRICTION            "This controls the friction between any two objects.  It's probably the friction between the model and the ground that you're most interested in.  Values between 5 and 50 usually work well."
+    IDC_BOUNCE              "This controls the bouncyness of the ground.  Zero is no bounce, one is maximum bounce."
+    IDC_ERP                 "Error reduction parameter.\n\nThis controls the amount of error that the simulation will enforce.  A value of 1 is generally ideal.  Lower values may be useful for reasons unknown."
+    IDC_CFM                 "Constraint force mixing.\n\nZero is ideal, but the simulation may get jittery or slow.  Something like 0.01 usually works well."
+    IDC_MODEL_POSEDELAY     "After pressing play, the model will pause for this many seconds before the motor kicks in."
+    IDC_MAXDELTA            "Maximum virtual time-step between simulation steps, in milliseconds.  Lower values give more table simulations, but they may also cause things to run slowly.  Anything over 25 invites trouble."
+    IDC_SNAKE_HORIZONTAL    "Range, in degrees, of the snake's horizontal movements"
+    IDC_SNAKE_VERTICAL      "Range, in degrees of the snake's vertical movements"
+    IDC_SNAKE_NUMBER_SEGMENTS 
+                            "Number of segments in the snake.  Each segment consists of two short beams, one horizontal hinge, and one vertical hinge."
+    IDC_GRAVITY             "Set the world's gravity.  "
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_SNAKE_PHASE_DIFFERENCE 
+                            "Difference, in degrees, between the phases of the horizontal and vertical hinge motions."
+    IDC_SNAKE_NUMBER_CYCLES "Number of complete 'waves' in the snake.   Think of it as the number of points that will touch the ground at any given time."
+    IDC_SNAPRESOLUTION      "This determines the resolution for dragging components in the 3D view."
+    IDC_MODEL_SPEED         "Speed of the model's main engine, in cycles per minute."
+    IDC_MINDELTA            "Minimum virtual time-step between simulation steps, in milliseconds.  Leave this as-is, it probably shouldn't really be here."
+    IDC_TERRAIN_TEXTURE_ELEVATION 
+                            "This image file will define the height of the terrain.\n\nIt should be a 24-bit greyscale image in JPG or PNG format.\n\nIt must be 128x128, 256x256, or 512x512 pixels.\n\nLarger images may take half an eternity to process."
+    IDC_TERRAIN_TEXTURE_BASE 
+                            "This image file will determine the basic coloring of the terrain.\n\nIt should be 512x512 or 1024x1024 pixels in size.\n\nIt will be scaled as necessary, but the dimensions must be equal and must be a power of two."
+    IDC_TERRAIN_TEXTURE_DETAILED 
+                            "This image will be tiled over the entire terrain to give it texture.\n\nIt must be 256x256 pixels in size, and it should tile smoothly."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_MODEL_POSEPHASE     "This sets the phase of the model's main engine during the pose period."
+    IDC_TERRAIN_SCALE_HORIZONTAL 
+                            "Each pixel in the elevation map will be scaled to this number of units in world coordinates."
+    IDC_TERRAIN_SCALE_VERTICAL 
+                            "This will scale the height of the elevation map.  \n\nHigher values give taller peaks and deeper valleys; a value of zero will result in perfectly flat terrain."
+    IDC_TERRAIN_TRIANGLECOUNT 
+                            "Terrain is drawn with lots of little triangles. \n\nModern graphics cards can draw tens of thousands of tiles per frame in real time - older cards may only be capable of a few thousand or so.\n\nIf your PC has trouble rendering the terrain in real time, try cutting this number in half."
+END
+
+STRINGTABLE 
+BEGIN
+    IDC_CAGESIZE            "This sets the size of the cage shown in the 3D view."
+END
+
+STRINGTABLE 
+BEGIN
+    ID_TERRAIN_OPEN         "Open a saved terrain parameter file"
+    ID_TERRAIN_ENABLE       "Enable or disable terrain "
+    ID_OPTIONS_CHOOSEDYNAMICSLIBRARY 
+                            "Choose which library will carry out the simulation"
+    ID_OPTIONS_GENERAL      "General configuration setttings"
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\JuicePlay.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

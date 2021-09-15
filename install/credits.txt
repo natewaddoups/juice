@@ -1,0 +1,11 @@
+First, thanks to Pierre Terdiman of France, who put up with the first couple of badly broken versions, missing DLLs, and the like.
+
+GLUT 	http://www.opengl.org/developers/documentation/glut/index.html
+ODE	http://www.q12.org
+MSXML4	http://msdn.microsoft.com/downloads/sample.asp?url=/MSDN-FILES/027/001/766/msdncompositedoc.xml&frame=true
+MSXML4	http://download.microsoft.com/download/xml/Install/4.0/W98NT42KMeXP/EN-US/msxml4.msi
+
+Quaternions			http://www.nearfield.com/~dan/misc/Quater/
+point-line intersection 	http://www.frontiernet.net/~imaging/rt_how2.html
+angle betwixt two vectors 	http://www.math.csusb.edu/faculty/fejzic/images/25111.html
+OpenGL demystification (& axes) http://www.codeguru.com/opengl/oglwrapperclass.shtml

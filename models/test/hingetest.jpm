@@ -1,0 +1,91 @@
+<Model>
+<Body>
+	<Component>
+		<ID>105234888</ID>
+		<Name>Body 1</Name>
+		<Position><X>2</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>105436936</ID>
+		<Name>Body 3</Name>
+		<Position><X>0.5</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>105638384</ID>
+		<Name>Body 5</Name>
+		<Position><X>-1</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<Body>
+	<Component>
+		<ID>105643112</ID>
+		<Name>Body 7</Name>
+		<Position><X>-1</X><Y>0</Y><Z>2</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>105237680</ID>
+		<Name>Hinge 2</Name>
+		<Position><X>1.25</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+<Body1>105234888</Body1>
+<Body2>105436936</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>105439152</ID>
+		<Name>Hinge 4</Name>
+		<Position><X>-0.25</X><Y>0</Y><Z>0.5</Z></Position>
+		<Rotation><H>0</H><P>90</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+<Body1>105436936</Body1>
+<Body2>105638384</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>105640592</ID>
+		<Name>Hinge 6</Name>
+		<Position><X>-1</X><Y>0</Y><Z>1.25</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+<Body1>105638384</Body1>
+<Body2>105643112</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+</RevoluteJoint>
+</Model>

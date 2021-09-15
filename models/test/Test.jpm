@@ -1,0 +1,75 @@
+<Model>
+<Body>
+	<Component>
+		<ID>104449216</ID>
+		<Name>Beam 1</Name>
+		<Position><X>0</X><Y>0</Y><Z>0.25</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+	<Dimensions><X>2</X><Y>2</Y><Z>0.5</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>104449632</ID>
+		<Name>Beam 3</Name>
+		<Position><X>0</X><Y>-0.75</Y><Z>1</Z></Position>
+		<Rotation><H>0</H><P>45</P><R>0</R></Rotation>
+		<Twin>104449968</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>0.25</Y><Z>2</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+<Body>
+	<Component>
+		<ID>104449968</ID>
+		<Name>Beam 5</Name>
+		<Position><X>2.75</X><Y>0</Y><Z>1.5</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>0</R></Rotation>
+		<Twin>104449632</Twin>
+	</Component>
+	<Dimensions><X>1</X><Y>1</Y><Z>1</Z></Dimensions>
+	<Mass>1</Mass>
+</Body>
+
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>104450304</ID>
+		<Name>Hinge 2</Name>
+		<Position><X>0</X><Y>0</Y><Z>0.25</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+<Body1>104449632</Body1>
+<Body2>104449216</Body2>
+</Joint>
+<Length>2</Length>
+<Diameter>0.25</Diameter>
+<RestAngle>45</RestAngle>
+</RevoluteJoint>
+
+<RevoluteJoint>
+<Joint>
+	<Component>
+		<ID>104450664</ID>
+		<Name>Hinge 4</Name>
+		<Position><X>0</X><Y>0</Y><Z>3</Z></Position>
+		<Rotation><H>0</H><P>0</P><R>90</R></Rotation>
+		<Twin>0</Twin>
+	</Component>
+<Body1>0</Body1>
+<Body2>0</Body2>
+</Joint>
+<Length>1</Length>
+<Diameter>0.25</Diameter>
+<RestAngle>-6.27744e+066</RestAngle>
+</RevoluteJoint>
+
+
+
+</Model>

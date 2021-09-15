@@ -1,0 +1,891 @@
+12/06/2001	Began coding 
+v1		basic skeletons of EXE and DLL		
+		working on header files and OpenGL window
+
+12/10/2001	Started taking notes on progress...
+v14		3D view works, component list works, notify/listen works
+		on startup, the bodies of a hard-coded quadruped are created
+		there are no joints in the quadruped as yet
+		it can be viewed in the 3D window
+		the components show up in the component list window
+		user can select components in the component list, they are highted in the 3D view
+
+12/11/2001	Started taking notes on progress
+v15		internal property classes work
+		when an object is selected, the property view gets its list of properties
+		no UI to show properties as yet, that will come next
+
+12/12/2001	properties are stored in a tree rather than a list
+v16		properties of selected bodies are shown in the UI 
+		cannot yet edit properties
+
+12/12/2001	can now edit properties
+v17		change the name, and the new name appears in the component list
+		change an object's position, and the 3D view shows it in the new position
+		that was too easy!
+		also fixed a bug in the model draw routine
+
+12/13/2001	3d view shows model in a cage
+v18		added support for top/front/side/corner views
+		added code to set drag plane, and highlight the appropriate cage sides
+		picking works
+		added code for better window tiling (that code needs cleanup though)
+
+12/15/2001	implemented dragging
+v19
+
+12/16/2001	implemented UserPreferences class and registry functions
+v20		implemented drag snapping 
+		redefined 'real' to 'double' & converted to 'double' (d) OpenGL APIs
+		create and draw hinges
+		create and draw sliders
+		automatically sets drag plane when camera moves
+
+12/17/2001	reimplemented property class, now there's one base class and multiple derived 
+v21
+
+12/18/2001	'generics.dll' for non-juice-specific helper classes
+v22		created bodyproperty class
+		made it possible to connect bodies with hinges, using the property window
+		added file open, save-as dialog boxes
+		implemented Mode::fSaveToFile and fLoadToFile (for bodies - not joints yet)
+
+12/19/2001	now able to delete components
+v23		put 'document name' in the application title bar
+		resets twin pointers when loading bodies
+		symmetric creation and selection work for bodies
+		symmetric property modification
+		symmetric creation for hinges
+		load/save revolute joints 
+		created first 'cw' model (and it's only been two weeks!)
+
+12/20/2001	added & implemented the 'look at selection' menu item
+v24		flattened cylinder caps (may want to fine-tune this, but seems to work well)
+		titlebar keeps the model name when selecting different MDI children
+		uses lowest Z hit in pick function
+		fixed 3D drag bug - cursor was initially in wrong place (gluPickMatrix hosed the projection matrix)
+		shows drag delta and current position in status bar when dragging
+		implemented edit|select all
+v25		got cut/paste working
+
+12/21/2001	added setup for dynamics
+v26		got body dynamics working 
+		got joints working
+		added mass to body properties list (forgot it way back when)
+
+12/22/2001	got 3D pulling to work
+v27		patched ODE memory leaks w/ dCloseODE()
+		changed "orientation" to "rotation" almost everywhere in the code (i.e. OrientationYPR -> RotationYPR)
+		created VectorXYZ::vRotateBy (VectorYPR)
+		got static and dynamic joint angles, but they suck
+
+12/23/2001	added code to filter adjacent bodies from collision detection
+v28		got joints showing during animation
+		added toolbars (poor layout tho)
+		writing MRU list, but not yet displaying in menu
+
+12/24/2001	got toolbar layout persistance working
+v29		got file MRUs working
+		fixed the multiple-3D-view drag plane bug
+		got hinge angles computed from appropriate body axes
+		moved pull functionality out of C3DFrame, into Juice::App
+		(now continues to pull while mouse is held still)
+		fixed bug w.r.t. picking (!dragging) joints while in operation
+		now using boldface in the components list to show selection state
+
+12/25/2001	got sliders simulating properly
+v30		made CComponentsFrame tree items 'polymorphic' (will support behaviors and motion links)
+		replaced CComponentsFrame::hGetItem with a recursive system
+		found and fixed a bug w.r.t. deleting components
+		made possible to add behaviors and motion links (model, componentsframe, app, etc)
+
+12/25-26/2001	load/save behaviors (names only so far)
+v31		removed vSetName from component class, made vOnUpdateName public
+		changed StringProperty to use const char* instead of std::string
+		nasty bug manifesting in notify/listen code when deleting behavior
+			learned that the Notifier<Events> base must appear at the TOP of the list of base classes!
+			may be related to the use of static_cast
+		added some code to Model::fLoadFromFile to get body/joint names updated in UI
+			did I break that somewhere in v30?
+		got it to add a motion link for each joint when creating behaviors
+
+12/27/2001	fixed the checkbox bug - see CComponentsFrame::OnCreate for style games
+v32		moved TreeItemData deletes to TVN_DELETEITEM handler
+		added m_fEnabled to Behavior and MotionLink classes		
+		implemented behavior & motionlink enablement checkboxes in component view
+
+12/27/2001	created the Selectable base class, revised selection set, component view, property view
+v33		big change, touched a lot of code, this gets its own version of the archive
+
+12/27/2001	implemented selection for motion link class
+v34		moved some "step" functionality out of the CMainFrame timer and into Application::fStep()
+		got initial toolbar layout working right
+		added & implemented View|Toolbars submenu
+		created the speed slider toolbar
+
+12/27/2001	implemented model::vStep, motionlink::addforce, joint::addforce
+v35		added a way to create Behaviors without lists of motion links, for loading from file
+		added jointID, phase, amplitude, and gain to the things motion links write to disk
+		implemented symmetric selection for MotionLink class
+		made joints listen for component (body) deletion
+		made components listen for component (twin) deletion
+		implemented properties for motion link class
+
+12/28/2001	scrapped ComponentProperty in favor of JointProperty and BodyProperty
+v36		fixed a bug in the property view
+		fixed the long-standing bug r.e. symmetrically assigning bodies to joints
+		figured out multiple-select for tree view
+		moved rest angle out of hinge class, now it's m_rStaticOffset in the motion link class
+		added MaxForce to motion link 
+		fixed lifecycle bugs, now behaviors and motion links are always destroyed when they oughtta be
+		changed property view from TVN_SELCHANGE to NM_CLICK+HitTest, fewer annoying model edit boxes that way
+		took hinge::startangle out of GetAngle (taking it out of the class and the file next!)
+
+12/28/2001	moved all registry settings under CURRENT_USER/software/natew/juiceplay
+v37		pulled out RegOpenCurrentUser in favor of RegCreateKeyEx to work on Win98
+		got rid of UserPreferences ctor/dtor, now making explicit calls to vLoad, vSave instead
+		added Color dialog, implemented but has bugs, doesn't always work, doesn't always cancel
+		added release-mode build configurations
+		chopped out the texture code (permanently?)
+		chopped out joint 'rest angle' and 'start angle'
+		added physics dialog, implemented friction and bounce
+
+12/30/2001	got rid of Hinge::m_eBody1Axis/Body2Axis
+v38		got rid of Hinge::vOnUpdateBody1/Body2
+		added call to component::operator= from Hinge::operator=
+			(fixed a new bug in copy/paste of hinges)
+		added open/save toolbar items
+
+12/31/2001	reimplemented cut/copy/paste, 
+v39		Model::vPaste (Clipboard *pClipboard) is now clipboard::vPaste (Model *pInto)
+		SelectionSet::vCopy is now Clipboard::vCopy (SelectionSet *pFrom, SelectionSet *pTo)
+		objects are duplicated during both copy and paste operations
+		added Juice::Application wrappers for clipboard actions
+		fixed the bug with the color dialog box
+		added the model settings dialog, with speed and pose-delay items
+		added WM_PAINT handler for the color dialog
+		implemented pose-and-start, eliminated 'crescendo', updated menu and toolbar
+		added "changed" flag to the model, and prompt before new/close
+		made the pause button enabled even during design mode
+		put C3DFrame::vSetCameraPosition back into the timer loop
+		added WM_SETCURSOR handling in 3D view
+		removed vSetXxxx functions from component, body, and joint classes, now using vOnUpdateXxxxx instead
+
+1/02/2002	tried a template-based Property implementation, ran into a compiler error that would require
+v40			HasProperties to come first in the base class list... which would conflict with Notifier's need
+			to be first in the base class list.  Dunno why that's an issue with the template version but
+			not the regular version of Property class, but got tired of battling it.
+		stripped out a lot of std::string parameters in the Property class, replaced with const char*
+		got rid of object references in Property classes, now using fnGet callbacks instead
+		added Body::operator= to fix a bug that caused a crash when entering operation mode after copy/paste
+			bad things when two juice::bodies are referencing one dynamics::body object
+
+1/04/2002	added the mode|follow menu item and toolbar button
+v41		changed the main SelectionSet member variable from boolean to a count
+		added support for the physics dialog's gravity, ERP and CFM parameters
+
+1/06/2002	added MotionTypeProperty class, added such to MotionLink property tree
+v42		added support for prismatic joints in MotionLink::vAddForce
+		added MotionType support in ModelFile.cpp
+		got continuous, doubletime, and stepped motions working
+		added prompt-if-changed to CJuicePlayApp::OnOpenRecentFile 
+
+1/07/2002	unified floating prompt and floating edit into CMicroDlg
+v42		added code to notify user if file does not exist or XML is invalid when loading model
+		fixed a bug that left kinda-stale pointers behind when twinship was reassigned
+
+1/08/2002	make property tree members static
+v43		enhanced Component::vSetName so "LR" becomes left or right, as appropriate, during sym editing
+		fixed minor problem with MicroDlg layout
+		fixed focus problem with MicroDlg
+		drop-list to change the motion-type property 
+		implemented @relative changes for RealProperty::fSetValueFromString
+		bugfix: changing hinge name DOES change motion-link name, now
+		"follow" is now enabled only when the app is in operation mode
+
+1/09/2002	Added code to get joint highlighted when motion link is selected
+v44		Went snowboarding
+
+1/10/2002	Created CModelTreeView class and moved functionality out of CComponentsFrame
+v45		Added CSplitterWnd to CMotionFrame
+		implemented tree view for motion frame
+		began implementing motion wave views - displays waves, but not motion phases
+		fixed bug w.r.t. camera staying displaced when switching back to design mode
+
+1/11/2002	Revised MotioView class, displays phases now, and has groundwork for phase adjustment
+v46		tested on 450mhz, found bizarre behavior due to large time steps
+		added min/max delta preferences to registry and physics dialog
+		created the web site, couple of screen shots, etc
+		fixed bug w.r.t. model::m_fChanged being true when changes were made
+			must set it to false after loading model
+
+1/12/2002	moved UpdateCmdUI stuff out of idle processing and into a timer loop
+v47		re-enabled body-body collision testing (forgot it was turned off)
+		added CJuiceDlg class and animation-pause functionality so dialog boxes pop up immediately
+		implemented clipboard actions for behaviors and motion links
+		fixed bug w.r.t. motion lines not being adjusted when window is resized
+		
+1/13/2002	added code to allow user to unselect objects in 3D view
+v48		added the "add" toolbar
+		added toolbar buttons for add beam/hinge/slider
+		
+1/14/2002	motion view shows selected motions in bold
+v49		able to set phase by dragging bar in motion view
+		selecting motions in motion view causes them to appear in the property view
+		
+1/15/2002	motion view shows continuous motion line 
+v50		motion view shows tooltips
+		added read-only Name property for motion links
+		began implementing selection rectangles
+		
+1/16/2002	implemented tacking
+v51		added ModelOutputFile wrapper around ostream class in ModelFile.cpp, encapsulates XML syntax
+
+1/18/2002	fixed a bug w.r.t. picking and control key use in the 3D view
+v52		rearranged 'remaining work' task list, to hasten "1.0" release
+			(save the gold plating for later)
+			
+1/19/2002	fixed the slider-drawing code
+v53		fixed motion-link pasting
+		fixed the boiling-on-the-ground bug
+		fixed a newly discovered null-pointer bug in the properties view
+		
+1/20/2002	made it impossible to pan while pulling (was already impossible while dragging)
+v54		disabled add beam/hinge/slider while simulation is running
+		removed the 'mimic' menu items (never actually wanted to use them while editing, so why bother?)
+		
+1/22/2002	fixed the tree view update/repaint problem
+v55		got ED209 walking, redid SimpleAnt
+		added friction, ERP, and CFM to the model XML
+		added some code to make app-mode UI updates instantaneous
+		
+1/23/2002	fixed accelerators
+v56		simplified the notify/listen pattern
+
+1/24/2002	made progress with selection rects, still not perfect though
+v57		fixed bug in ~Notifier: maybe it would be best to always use iterator-less list traversal in destructors
+
+1/25/2002	added snake generator
+v58
+
+1/26/2002	removed pause from AppMode enum, added bool flag in its place
+v59		made AppMode private, added accessor & manipulator functions 
+		fixed bug that sometimes caused blank screen when 'look at' was used during simulation
+		added 'look at' toolbar item
+		added accelerators for create beam/hinge/slider
+		added keyboard support for zoom in the 3D view
+		cleaned up ModelFile.cpp a little bit, added more comments
+		added C3DFrame::PreCreateWindow to get CS_OWNDC for the 3D view windows
+		disabled selection rects
+		
+1/27/2002	revising behavior/motor stuff
+v60		move gain, max-force into juice::joint class
+		added a movement accumulator to the joint class
+		revise model->step to sum up results of all motions, then compute force
+		fixed bug re camera not re-centering after opening file, or File|New
+		improved tacking support - can now set/release the tack during simulation
+		added help text to dialog boxes
+		added motion source to behavior class
+		added joystick control
+		
+1/28/2002	added AmpMod
+v61		removed the 'averaging' of motions
+		got dihno steerable and leanable
+		added "amp mod" support
+		fixed bug w.r.t. setting check box states in tree view
+		added behaviors to dog & dino
+		
+1/29/2002	removed 'present angle' joint property
+v62		fixed copy/paste of behavior
+		added joint stops
+		fixed a bug with microdlg control layout
+		fixed sort order in microdlg drop list
+		did most of the feedback code, stuck on a lin. alg. problem though
+		
+1/31/2002	added "generate manypede"
+v63
+
+2/01-07/2002	tried new approach to feedback
+v64		added motion source type enum
+		found and fixed bug w.r.t. stale behavior::feedbacksource pointer after loading file
+		got pitch and yaw feedback working
+		roll still a mystery
+		
+2/11/2002	finally got roll feedback working
+v65		fixed bug w/ joint stops (degree/radian conversion - only worked right w/ setting of zero)
+		consider it 'shipped'
+		
+v66		fixed a bug: global physics parameters were not being reset after model is loaded - now they're reset in Model::vPrepareSimulation
+
+2/22/2002	switched over to new XML serialization scheme 
+v67		(only 15%/16% faster in two test cases, one showed 3.9 vs 4.6 seconds to load Dihno)
+		added "import" menu item				
+
+2/23/2002	began adding code to get xml file version attribute, but it doesn't work yet
+v68		set speed slider 'page' increment to 10
+		added wider ground grid when camera leaves cage area
+		
+		
+3/02/2002	split Behavior class into Behavior and ClockworkBehavior
+v69		split MotionLink class into Motor and ClockworkMotion
+		created PropertyTreePtr class to get rid of the inelegant deletes in ~Model	
+		
+		broke the cut/paste of behaviors
+		broke behavior creation
+		broke motion view
+		
+3/04/2002	rewrite of cut/paste stuff
+v70		rewrite of twin and joint-body pointer fixing stuff
+
+3/08/2002	started integrating mpegout
+v71		fixed bug that cropped up in vDoPull during the conversion to RTTI
+
+3/11/2002	added shadow code
+v72		addressed window-resizing problem during mpeg recording
+		found bug in mpeg code, now uses hard-coded file name only
+		
+3/14/2002	put clockwork motion view code back in
+v73		found and fixed bug r.e. multiple motion view windows
+		removed mentions of motion "source" in string table
+		reimplmemented behavior copy/paste
+		got multiple motion view window classes working
+		
+3/21/2002	added stubs of network behavior and motor classes
+v74,75	fixed bug: delete hinge, it remains in tree view under behaviors
+		fixed bug: set feedback source, then control source, get crash... vice versa, no crash
+		fixed bug? change joint names, motor names don't change to reflect that (same cause as above?)
+		fixed bug: LookAt point is wrong with the pogo model - and any model with sliders
+		Model::m_Behaviors is a XmlStreamablePolymorphicPointerList
+
+3/23/2002	Behavior::m_Motors is a XmlStreamablePolymorphicPointerList
+v76		Generic::GraphControl compiles, but not yet tested
+
+4/10/2002	adding code to create network behavior nodes
+v77		added code to force display of properties of behaviors selected in motion views, without affecting global selection set
+		began fleshing out various node classes
+		moved property tree cleanup into ~Application
+
+4/12/2002	got load/save working for the network graph
+v78
+		
+4/14/2002	removed pseudo-rtti from property classes, now using real rtti
+v79		added parameter to Breakpoint() macro
+		added edge-picking code
+		
+4/14/2002	added preference-based colors for graph objects
+v80		added support for deleting graph objects via UI (via lots of notify/listen infrastructure)
+		
+4/15/2002	added graph compilation and execution
+v81		double-buffered the graph control
+		got rid of the jump when dragging nodes
+		moved motor list stuff out of base behavior class and into clockwork behavior
+			there is no 'motor' class, only 'clockworkmotor'
+			
+4/16/2002	added support for graph panning (aka scrollable network view window)
+v82		nodes and edges notify network when changed/deleted
+		network notifies views when changed
+		view repaints when network changed
+		motor nodes now properly get pointed back to the correct joints
+		
+4/17/2002	added range and offset parameters to the wave node
+v83		enabled selection of multiple nodes & edges
+		moved node size/dims out of Graph::Node, into Juice::Node
+		got both simpleant gaits implemented with networks
+		implemented 'ramp width' in the wave node
+		
+4/18/2002	fixed a memory leak that only happened if you destroy all 3D views then create a new one
+v84		lots of work on the Network.h dox comments, found some good idioms for -events and -list classes
+		added dox stuff to the devbackup zip
+		added code to hack out the video recording menu item in release builds
+		fixed flicker problem w/ motion view
+		
+4/19/2002	fixed bug r.e. only one network behavior showing up in new motion view windows
+v85		reposition all nodes for 0 offset after dragging the whole graph around
+
+4/20/2002	added constant and multiply nodes
+v86		when creating a new edge, a pseudo-edge is drawn to show what's going on
+
+4/22/2002	can now drag groups of nodes
+v87		initialize the multiply node value to 1, not 0, with each step
+		made it impossible to use constants or motion sources as edge destinations
+		added code to ignore the mouse if it moves outside the graph control while dragging
+		
+4/22/2002	revised significant amount of the clipbard code 
+v88		enabled cut/copy/paste of nodes, networks, groups of nodes
+		updated the Generate(Snake|Manypede) code to work with new Clockwork behavior classes
+		
+4/23/2002	fixed problem w/ newline chars in property microdlgs
+v89		another major revision of the clipboard code: Selectable::vPaste & vOverWrite both rolled into fPaste
+		now can paste many things 'into' preselected objects		
+		new components are now pasted in with a slightly different position
+		but pasting over an object does not change its position
+		
+4/24/2002	wheels!
+v90		and motor nodes that set velocity, not position (this took a few changes to the joint base class)
+
+4/25/2002	spheres
+v91		segway and 6pack models
+
+4/25/2002	ball joints
+v92
+
+4/26/2002	put gravity into the model files
+v93		
+	
+4/28/2002	fixed long-standing never-noticed bug w/ joint orientation
+v94
+
+4/30/2002	added code to fix crash bugs when slider.body1 == slider.body2
+v95		added test to ensure that you don't create an edge from a node to itself
+
+5/08/2002	fixed the pick-on-shadow bug, greatly cleaned up RenderModel.cpp code
+v97		2nd joystick support, buttons and hats in the lowlevel code but not in the UI or sim yet
+
+5/08/2002	terrain rendering, but no collision
+v98	
+
+5/09/2002	now linking to ODE DLL, demeter removed for the moment (digging into issues w/ ODE memory pseudoleaks)
+v99
+
+5/09/2002	new linking to both ODE.DLL and Demeter.DLL
+v100
+
+5/09/2002	integrating ODE and Demeter
+v101
+
+5/10/2002	debugging the integration, still not functional
+v102	switched to dSINGLE to play nice with tri-collide, which expects float[3] vectors
+v103	might consider going back to dDOUBLE and tweaking tri-collide's call to dGeomGetPosition
+		
+5/11/2002	got terrain working
+v104	tweaking lighting a bit, still not satisfied tho
+		fixed box vertex normals
+		
+5/12/2002	improved lighting
+v105	
+
+5/13/2002	more lighting improvements
+v106	got it reloading terrain safely
+		fixed terrain-related memory leaks (all clean now)
+		revised to work with MSXML4, not MSXML2 (oops)
+		got terrain|new menu working
+		
+5/14/2002	added keyboard camera movement to 3D pane
+v107	found/fixed a couple bugs in Demeter
+		disabled terrain menu during simulation
+		fixed lighting on terrain
+		
+5/15/2002	fixed: after maximizing an MDI child, then tiling, clicking on any MDI child maximizes it		
+v108	(but the fix brought in a new problem)
+		made 'new terrain' dialog more interactive
+		added status messags when 'load terrain' fails	
+		added help text to the New Terrain dialog
+	
+5/16/2002	fixed a bug with file loading
+v109	
+			
+5/17/2002	fixed a bug in the color select dialog (don't sort the listbox!)
+v110	got shadows working on terrain
+
+5/17/2002	changed the mouse wheel handling, now it's * rather than +
+v111
+
+5/18/2002	added a bit of code to set focus to 3d window on left or right mouse click
+v112		
+	
+6/07/2002	fixed bug w.r.t. being able to (appear to) create an edge to nowhere
+v113	fixed bug w.r.t. not being able to assign twins to joints
+		added damping to the 'pull' force
+		
+7/1/2002	fixed bug w.r.t. hinges not being drawn at correct angle in design mode		
+v114	added motorcycle.jm to release package, removed some old models
+
+8/08/2002	fixed hard-to-repro bug w.r.t. moving objects during symmetric editing
+v115	added two ornithopter models, bird1.jm and bird2.jm
+
+8/12/2002	polished code a bit for job application
+v116	fixed bug w.r.t. X position during symmetric editing
+		moved the motorcycle's steering hinge backward for proper "triple-clamp" offset
+		
+8/16/2002	added code for symmetric roll and pitch property updates
+v117
+
+8/28/2002	copied motor nodes keep their joint pointers
+v118	clicking on the network background selects the behavior
+		fixed release-mode bug w.r.t wglMakeCurrent, probably happened in v116
+		
+8/29/2002	added absolute value 
+v119	added SimpleHex.jm
+
+8/30/2002	added limit node class
+v120
+
+10/18/2002	created an abstract base class for dynamics stuff
+v121	moved all ODE code to an implementation of said class
+		should be pretty easy to add novodex support now
+		
+10/18/2002	created JuiceDynamicsODE.dLL
+v122	deleted the long-obsolete GraphEngine project
+
+10/18/2002	split up the source files in JuiceDynamicsODE.dll
+v123	should be even easier to add novodex support
+
+10/19/2002	rebuilt with ODE as dSINGLE but real as double
+v124	tried ODE with dDOUBLE but found that tri-collider requires floats
+		tried supplying floats in the right places, had tri-collider crashing anyhow
+		
+10/22/2002	first build of JuiceDynamicsNovodex.dll
+v125	doesn't actually work or anything, but it compiles nice
+
+10/23/2002	added late loading of physics DLLs
+v126	got novodex bodies to collide with each other and with plane
+
+10/23/2002	Novodex hinges, sliders, and ball joints are working now
+v127	get rid of the vConnectBodies methods in DynamicsAPI, now doing that stuff in vCreate
+
+10/24/2002	added DynamicsFactories
+v128	switched ODE to the new cylinder class
+		changed the way cylinders are drawn - hinges no longer have domes
+		added FPS status pane
+	
+10/24/2002	got the 'choose physics library' dialog box working	
+v129	
+
+10/25/2002	added UI support for both cylinder and capsule shapes
+v130	gave hinges domes again, body cylinders have no dome, capsules do
+		fixed a lurking build problem due to "treat wchar_t as built-in type"
+		
+10/29/2002	added pointer tests in case Novodex SDK init calls return null
+v131	added pointer tests so 'tack' doesn't crash
+		added test so that Novodex isn't listed in the dialog if it doesn't initialize properly
+		
+10/30/2002	added Render Joints registry setting			
+v132	Created Generic::XML namespace, renamed XML serialization support classes
+
+11/05/2002	added support for copying and pasting network behaviors
+v133	fixed minor bug w/ component yaw property and symmetric editing		
+		fixed crash bug w/ deleting body that was used as motion source for trivial behaviors
+		
+v134
+		turned off the rendering when app is iconic
+		added code to load textures into BMP rendering context when recording
+		
+03/26/2003	Updated to ODE .35
+v135	cleaned up the build environment a bit
+		moved some required binaries into Install/DLLs
+		
+04/24/2003  Added support for dWorldStepFast
+v136	Changed CreateFactory method to accept a "FactoryID" parameter, so each dynamics DLL can support multiple factories
+	
+04/28/2003	Changed the dynamics library loading routines to give better error message when things go wrong
+v137	
+
+5/??/2003	Fixed installer bug, fixed bug w/ terrain and boxes
+v138
+
+5/27/2003	Removed RANDOM_JOINT_ORDER from dWorldStepFast to make it deterministic
+v139	Added Trebuchetsturvat.jm to the distribution
+		Changed RenderViewport.cpp so the cage is drawn only in design mode
+		Added XmlNode class (compiles, not tested) to represent XML DOM during file load 
+		
+5/28/2003	Finished XmlNode-based file loading, it's so much faster it's ridiculous
+v140
+
+5/30/2003	Added .jm3 file format
+v141	dynamics library constants are now separated from Model info
+		different sets of constants can be used for each dynamics DLL
+		
+5/30/2003	Refactored, got rid of the Dynamics::Factory classes
+v142	World class now does what Factory used to do
+		constants are now a member of the World class		
+		
+5/31/2003	Reimplemented ODE physics dialog in ODE physics DLL
+v143
+
+6/1/2003	Put in a 'general options' dialog with the min delta / max delta parameters
+v144	
+
+6/11/2003	Refactored the XML input code, created the XmlInput class to wrap XmlNode
+v146	Wrote code to fix serialized pointers in the serialization code rather than in the application
+	
+6/17/2003	Commenting and beautification of the recently revised code	
+v147
+
+7/2/2003	Fixed a minor (very minor) bug in the rendering code (invalid value for a light parameter)
+v148	Revised the JuiceError class, it's now Generic::Exception
+
+08/09/2003	Minor changes to load/save stuff
+v149	fixed bug: vSetChanged(false) wasn't getting called when saving
+		fixed bug: UI wasn't getting component names after loading file
+		got rid of vAfterDeserialize, put that code into Model::Serialize
+		Made Stream::m_eOperation private, with a public accessor for read-only access
+		fixed bug: setting the look-at point doesn't (didn't) update the viewports if 
+		you do it during design mode
+		
+08/14/2003	Fixed bugs in network behavior copy/paste
+v150
+
+08/15/2003	Fixed minor bug in load/save code w.r.t. 'm_fChanged' 
+v151	Fixed major bug in load/save w.r.t. updating pointers before updating UI
+		Fixed terrain triangle conversion problem, now the physical terrain matches rendered terrain exactly
+		
+08/15/2003
+v152	Fixed minor bug in cage-drawing code, boxes now line up perfectly with the cage lines
+
+v153	Added debugging code in netbehavior copy methods
+		Found/fixed bugs in SliderQuad.jm3, probably caused by old code (not sure tho)
+		started sketching out the external behavior API
+		noticed memory leak!
+	
+Ran 'project line counter' at this point:
+203	files (h, cpp, rc)
+47256 	lines
+26490 	code
+12419 	comments
+370 	mixed
+8717	blank
+38539	net lines
+this does not include ODE, Demeter, or any other 3rd party libraries
+	
+10/8/2003	
+v154	Revised to build with VS.Net2003 (7.1)
+		Found bugs and fixed in serialization code (not sure if they were due to the compiler update)
+		no memory leak found
+		removed the pseudo-RTTI stuff in the Component class and derived classes
+			still have more testing to do
+			search for eGetType, test those code paths before deleting commented-out code
+
+10/11/2003
+v155	Found and fixed a bug w.r.t. stale behavior pointers in CMotionFrame and CNetworkView
+		searched for Component::eGetType, tested those code paths, deleted the old commented-out code
+
+10/13/2003
+v156	Renamed XmlNode class to Node since it's in the XML namespace
+			Found ambiguity with Juice::Node in NetworkBehavior.cpp
+			Removed "using namespace Generic::XML" from DynamicsAPI.h
+		Got old .jm files to load again
+			enhanced XmlNode class to store a list of Attribute name-value pairs
+			look for SerializationVersion Attribute in top-level node
+			this requires old .jm3 files to have the first line changed to:
+				<JuiceFile FileVersion="1" SerializationVersion="2">
+10/22/2003
+v157	Fixed a bug that caused the last version to write files with a first
+		line ending with ="2"">
+		Fixed a bug the caused the app to crash when opening such a file
+		Rebuilt Demeter with MSVC71, added project to solution
+	
+	
+11/06/2003	
+v158	Added code to hide the Train menu item in non-debug builds
+		Added support for key up/down and left/right
+		
+11/07/2003
+v159	Added basic functionality to the training dialog box
+
+1/30/2004
+v163	Rebuilt installer with MSVC70x.dll and MSVCRT.dll
+			
+Priorities:
+
+	GA interface
+	external control interface	
+	Grep for TODO
+	undo-redo
+	attach camera to body (or should this be a separate app?  JuiceArena?)
+
+
+
+future features with Novodex dynamics library:
+	use CollisionVeto to eliminate contacts between adjacent bodies
+	Novodex sliders don't draw properly (no stretching, like old ODE sliders)	
+	get terrain working w/ Novodex	
+	"tack" support (will need to stop creating a body object for the 'tacked' body, as Novodex doesn't support the 'fixed' joint)
+	cylinder collision hulls (no primitive for this at the moment)
+	0-def joint for tacking objects to the environment
+	hinge joint rGetAngle
+	hinge joint motor: Novodex::RevoluteJoint::vAddForce (real rVel, real rForce)
+	slider joint motor
+	slider joint rGetExtension
+	
+Easy (?) bugs:
+		
+	don't allow position/orientation editing during simulation mode
+	convert ground.ppm to ground.png (should get MUCH smaller file that way)
+	close editbox microdlg on enter? no, not a bug
+	
+							
+Hard Bugs:
+
+	Window|Tile causes a bit of flicker during retiling, see notes in CMainFrame::OnTile
+
+	mpeg dll stuff not real stable
+
+	somehow the simpleant.jm files got hosed - joints referencing twins of the intended bodies, etc
+	keep an eye out for that, if that happens again, find out why
+						
+Future features:
+	
+	support multiple file formats (XML, ODS, ?)
+		create something analogous to the 'formatter' classes in C#
+		
+	Support ODE's Hinge-2 joint
+	
+	Support Novodex's many many joints
+			
+	clean up the separation between 'application' and 'editor' functionality
+	
+	get most headers (e.g. model.h) out of JuiceEngine.h so the dynamics DLLs won't need full rebuilds so often
+
+	shift-drag to change look-at point
+	
+	undo/redo:
+		delete object
+		add object
+		change object property (incl. position of network nodes?)
+
+	get UI to use Selectable::m_pParent for hierarchies - could simplify the ModelTreeView?
+		change components view to "explorer" style
+		root items: model(s), environment(s)
+		give the model a notion of 'root beam'
+		make components tree update dynamically as items are expanded
+		add 'set as root beam' menu item
+		
+	attach camera to a body
+		create special "camera" component type?
+
+	new behavior nodes should be cascaded, not piled up
+	
+	UI/sim support for hat switch, joystick buttons
+	
+	v1.X genetic algorithms tune behaviors
+	v1.X attach arbitrary meshes to bodies (just for rendering purposes)
+	
+	draw joints with cool line-to-plane intersection stuff (add arms to hinges during simulation)	
+
+	? merge function nodes and motor nodes into a single list in NetworkBehavior
+		what about pointer-fixing... use iskindof to find/fix motor nodes?
+		what else would that break?			
+	
+	fish-eye network view?
+	
+	clean up the clockworkbehavior and clockwork motor classes
+		they're probably too complex due to the base class fork that happened for a while
+		
+	preferences dialog box 
+		????	snap resolution
+		real	cage size
+		bool	pause animation for dialog boxes
+		bool 	process only ground collisions
+		bool	hide joints during simulation? (faster?)
+		bool	use textures when drawing ground
+		bool	collide with cage walls?
+
+	toolbar buttons for drag planes
+	
+	selection rects
+	
+	render clipboard as XML (a small model file)
+
+	physics dialog: separate params for body-ground and body-body contact params (friction/bounce/ERP/CFM)	
+	motion view shows hand cursor over motion bars
+	
+	logging mechanism
+	
+Stuff to document in detail:
+	physical constants for each dynamics library
+		each factory should define a Serializable structure of the constants it needs
+		each world should be able to get those constants from the factory during vPrepareSimulation
+			factory gets a 'get constants' member
+			world constructor take pointer to factory, stores that ptr in a world member
+			vPrepareSim uses that pointer to call the factory's get constants member, initializes simulation w/ the constants
+		when saving a model, the constant structs for each factory are saved with the model
+		when loading a model, the constant structs are initialized from the file
+	
+New behavior system:
+	the new behavior class consists of:
+		a list of actions
+			what is now network behavior should be coupled with a "Context"
+			the pair will be called an action		
+				e.g. stand on left foot
+				e.g. lunge to right foot
+		a list of "skills"
+			a skill enables a group of actions (is factored into the context value)
+				e.g. walk
+				e.g. turn
+		something (FCM? control net?) to shift power from one skill to another
+				e.g. walk, turn, follow
+
+Inelegancies:
+	cannot pan & drag/pull at same time
+		
+environments
+		add Environment class in JuiceEngine.h
+		
+		typedef std::list<StaticObject*> StaticObjectList
+		
+		class Environment
+			StaticObjectList m_Static
+			what else?
+			gravity?
+
+		class StaticObject
+			typedef enum 
+			{
+				stInvalid=0,
+				stBox, stTube, // stBall
+			} Type;
+			Type m_eType;
+			VectorXYZ m_vecPosition;
+			VectorYPR m_vecOrientation;
+			VectorXYz m_vecBoxDimensions;
+			real m_rTubeDiameter;
+			real m_rTubeLength;
+			// real m_rBallDiameter;
+
+		?? class StaticObject : public Component ??
+			
+		add m_Environment to Application
+
+		when going to sim mode, create collision objects
+
+		//create project file object for .jp files
+		//class JuiceProject
+		//	std::string m_strModelPath;
+		//	std::string m_strEnvironmentPath;
+		
+		make File|Open dialog support .jm & .je file types // and .jp 
+		on .jm, open model; on .je, open environment
+		//on .jp, open one of each
+
+		if user opens model, adds static object, save as modelname.je by default
+			make current doc modelname.jp	
+			
+To create a new network node class
+
+	add declaration in Network.h... must include:
+		property tree (at least create a base class tree and return a pointer to it)
+		property getters and setters
+		static creator function, for use by the FunctionNodeList class (serialization)
+		
+	implement that static creator (currently they're all at the top of NetworkBehavior.cpp)
+		
+	add two creator functions in Network.h
+		one that returns a node pointer (who calls this, besides the fnInvoke wrapper?)
+		one that returns void, to fit the fnInvoke property signature
+		
+	add serialization code in ModelFile.cpp
+	add a line in NetworkBehavior::NetworkBehavior, to prime the function node list serializer
+				
+	
+	
+// linear motor
+//
+// similar in function to angular motor, but 
+// (a) controls only one axis; 
+// (b) controls linear, not angular, motion
+// (c) axis is always relative to body 1
+
+struct dxJointLMotor : public dxJoint {
+  dVector3 axis; // motor axis
+  dxJointLimitMotor limot;
+};

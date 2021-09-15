@@ -1,0 +1,100 @@
+<Model>
+	<Friction>5</Friction>
+	<ERP>1</ERP>
+	<CFM>0.01</CFM>
+	<StandardSpeed>15</StandardSpeed>
+	<SpeedFactor>1</SpeedFactor>
+	<PoseDelay>1</PoseDelay>
+	<PosePhase>0</PosePhase>
+	<Body>
+		<Component>
+			<ID>77091320</ID>
+			<Name>Beam 1</Name>
+			<Position>
+				<X>-2</X>
+				<Y>0</Y>
+				<Z>0.5</Z>
+			</Position>
+			<Rotation>
+				<H>0</H>
+				<P>0</P>
+				<R>0</R>
+			</Rotation>
+			<Twin>77118216</Twin>
+		</Component>
+		<Dimensions>
+			<X>1</X>
+			<Y>1</Y>
+			<Z>1</Z>
+		</Dimensions>
+		<Mass>1</Mass>
+	</Body>
+
+	<Body>
+		<Component>
+			<ID>77118216</ID>
+			<Name>Beam 2</Name>
+			<Position>
+				<X>2</X>
+				<Y>0</Y>
+				<Z>0.5</Z>
+			</Position>
+			<Rotation>
+				<H>0</H>
+				<P>0</P>
+				<R>0</R>
+			</Rotation>
+			<Twin>77091320</Twin>
+		</Component>
+		<Dimensions>
+			<X>1</X>
+			<Y>1</Y>
+			<Z>1</Z>
+		</Dimensions>
+		<Mass>1</Mass>
+	</Body>
+
+
+	<RevoluteJoint>
+		<Joint>
+			<Component>
+				<ID>77118488</ID>
+				<Name>Hinge 3</Name>
+				<Position>
+					<X>0</X>
+					<Y>0</Y>
+					<Z>0.5</Z>
+				</Position>
+				<Rotation>
+					<H>0</H>
+					<P>0</P>
+					<R>0</R>
+				</Rotation>
+				<Twin>0</Twin>
+			</Component>
+			<Body1>77091320</Body1>
+			<Body2>77118216</Body2>
+			<Gain>10</Gain>
+			<MaxForce>100</MaxForce>
+		</Joint>
+		<Length>1</Length>
+		<Diameter>0.25</Diameter>
+	</RevoluteJoint>
+
+
+
+	<Behavior>
+		<Name>Behavior 4</Name>
+		<Enabled>1</Enabled>
+		<MotionSource>2</MotionSource>
+		<MotionLink>
+			<JointID>77118488</JointID>
+			<Enabled>1</Enabled>
+			<MotionType>0</MotionType>
+			<Phase>0</Phase>
+			<Amplitude>175</Amplitude>
+			<Offset>0</Offset>
+		</MotionLink>
+	</Behavior>
+
+</Model>
