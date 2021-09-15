@@ -13,6 +13,8 @@ Life continued, other hobbies took over, and I forgot about the whole thing.
 
 Ten years later, I couldn't get it to compile with current compilers.
 
-Twenty years later, I figured I should get it to compile, and put it on GitHub.
+Twenty years later, I figured I should get it to compile, and put it on GitHub. 
+
+It's on GitHub. That was the easy part.
 
 I don't remember why I named it Juice.
