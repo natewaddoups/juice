@@ -1,5 +1,7 @@
 # Juice
 
+![Terrible Screenshot](https://github.com/natewaddoups/juice/raw/main/media/TinyGrainyScreenshot.jpg)
+
 In late 2001, I set out to build a small walking robot, and figured I would start
 by simulating it, using Russ Smith's Open Dynamics Engine (see http://ode.org/). 
 Specifying robot geometry in C++ was hard though, so I started building a GUI to
