@@ -16,7 +16,7 @@ http://www.natew.com/juice/License.html
 #define __JuiceModel__
 
 #include <list>
-#include <hash_map>
+#include <unordered_map>
 #include <GenericTypes.h>
 #include <GenericProperties.h>
 #include <JuiceEngine.h>
@@ -59,19 +59,19 @@ namespace Juice {
 	/* Hash-map typedefs for pointer fixing during serialization and clipboarding
 	*****************************************************************************/
 
-	typedef hash_map <Generic::UINT32, Body*> BodyHashMap;
+	typedef unordered_map <Generic::UINT32, Body*> BodyHashMap;
 	typedef pair <Generic::UINT32, Body*> BodyMapPair;
 
-	typedef hash_map <Generic::UINT32, RevoluteJoint*> RevoluteJointHashMap;
+	typedef unordered_map <Generic::UINT32, RevoluteJoint*> RevoluteJointHashMap;
 	typedef pair <Generic::UINT32, RevoluteJoint*> RevoluteJointMapPair;
 
-	typedef hash_map <Generic::UINT32, PrismaticJoint*> PrismaticJointHashMap;
+	typedef unordered_map <Generic::UINT32, PrismaticJoint*> PrismaticJointHashMap;
 	typedef pair <Generic::UINT32, PrismaticJoint*> PrismaticJointMapPair;
 
-	typedef hash_map <Generic::UINT32, SphericalJoint*> SphericalJointHashMap;
+	typedef unordered_map <Generic::UINT32, SphericalJoint*> SphericalJointHashMap;
 	typedef pair <Generic::UINT32, SphericalJoint*> SphericalJointMapPair;
 
-	typedef hash_map <Generic::UINT32, Joint*> JointHashMap;
+	typedef unordered_map <Generic::UINT32, Joint*> JointHashMap;
 	typedef pair <Generic::UINT32, Joint*> JointMapPair;
 
 	/// Simple list of components
@@ -90,8 +90,8 @@ namespace Juice {
 	public:
 		XmlSplWithTwinFixing (const wchar_t *wszTag) : XML::SerializablePointerList<Class> (wszTag) {}
 
-		void vCreateHashMap (hash_map<Generic::UINT32, Class*> &Map);
-		void vSetTwinPointers (hash_map<Generic::UINT32, Class*> &Map);
+		void vCreateHashMap (unordered_map<Generic::UINT32, Class*> &Map);
+		void vSetTwinPointers (unordered_map<Generic::UINT32, Class*> &Map);
 	};
 
 	/// XML streamable pointer list for joints
@@ -101,7 +101,7 @@ namespace Juice {
 	public:
 		XmlSplWithTwinAndBodyFixing (const wchar_t *wszTag) : XmlSplWithTwinFixing<Class> (wszTag) {}
 
-		void vSetBodyPointers (hash_map<Generic::UINT32, Juice::Body*> &Map);
+		void vSetBodyPointers (unordered_map<Generic::UINT32, Juice::Body*> &Map);
 	};
 
 	/// List of bodies

@@ -24,7 +24,7 @@ namespace Juice
 	class Edge;
 
 	/// Node hash maps are used to set edge->node pointers after deserializing or clipboard-copying
-	typedef hash_map<Generic::UINT32, Juice::Node*> NodeHashMap;
+	typedef unordered_map<Generic::UINT32, Juice::Node*> NodeHashMap;
 
 	/// This is an STL list with a couple extra functions for convenience
 	class NodeList : public list<Node*> 

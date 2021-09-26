@@ -217,7 +217,7 @@ namespace Juice
 	public:
 		ClockworkMotorList (ClockworkBehavior *pBehavior) : m_pBehavior (pBehavior), XML::SerializablePointerList<ClockworkMotor> (L"ClockworkMotor", L"MotionLink") {}
 		void vCreateNew (ClockworkMotor **pNew, bool *pfAddToList);
-		void vSetJointPointers (hash_map<Generic::UINT32, Joint*> &Map);
+		void vSetJointPointers (unordered_map<Generic::UINT32, Joint*> &Map);
 	};
 
 	class ClockworkBehavior;
