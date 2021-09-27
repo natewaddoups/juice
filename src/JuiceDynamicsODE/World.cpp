@@ -15,7 +15,7 @@ http://www.natew.com/juice/License.html
 #include <JuiceEngine.h>
 #include <DynamicsAPI.h>
 
-#include <ode/ode.h>
+//#include "ode\ode.h"
 #include "DynamicsODE.h"
 
 #include <float.h>

@@ -22,7 +22,8 @@ on the application itself.
 
 #include <GenericTypes.h>
 
-#include <ode/ode.h>
+#include <ode\ode.h>
+//#include "ode\ode.h"
 
 #include <DynamicsAPI.h>
 

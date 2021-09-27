@@ -579,7 +579,7 @@ bool StreamReader::fRead (const char *szPath, Serializable *pObject, StringAssig
 	CLSID clsidSAX;
 	CLSID clsidSAX_hardcoded = __uuidof(SAXXMLReader);
 
-    CLSIDFromProgID (L"Msxml2.SAXXMLReader.4.0", &clsidSAX);
+    CLSIDFromProgID (L"Msxml2.SAXXMLReader.6.0", &clsidSAX);
 
 	HRESULT hr = CoCreateInstance(
 						clsidSAX,
