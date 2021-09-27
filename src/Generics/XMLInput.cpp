@@ -424,9 +424,8 @@ protected:
 		if (m_pReader)
 		{
 			// Copy the tag name for zero-termination
-			wchar_t *pwchLocalName = (wchar_t*) alloca (cchLocalName*3);
-			memcpy (pwchLocalName, _pwchLocalName, cchLocalName * 2);
-			pwchLocalName[cchLocalName] = 0;
+			wchar_t *pwchLocalName = (wchar_t*) alloca ((cchLocalName*2) + 2);
+			lstrcpynW(pwchLocalName, _pwchLocalName, cchLocalName + 1);
 
 			m_pReader->vStartElement (pwchLocalName);
 
@@ -468,10 +467,9 @@ protected:
 		if (m_pReader)
 		{
 			// Copy the tag name for zero-termination
-			wchar_t *pwchLocalName = (wchar_t*) alloca (cchLocalName*3);
-			memcpy (pwchLocalName, _pwchLocalName, cchLocalName * 2);
-			pwchLocalName[cchLocalName] = 0;
-
+			wchar_t* pwchLocalName = (wchar_t*)alloca((cchLocalName * 2) + 2);
+			lstrcpynW(pwchLocalName, _pwchLocalName, cchLocalName + 1);
+						
 			m_pReader->vEndElement (pwchLocalName);
 		}
 		return S_OK;
