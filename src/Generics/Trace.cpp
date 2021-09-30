@@ -66,7 +66,7 @@ void Trace::Unexpected (const char *szFile, long iLine, const char *szMsg)
 	OutputDebugString ("\r\n");
 }
 
-std::ofstream::_Myt& Trace::write (const char *sz, std::streamsize count)
+std::ofstream& Trace::write (const char *sz, std::streamsize count)
 {
 	if (m_eOutputMode == omStdErr)
 	{
@@ -83,7 +83,7 @@ std::ofstream::_Myt& Trace::write (const char *sz, std::streamsize count)
 	return *this;
 }
 
-std::ofstream::_Myt& Trace::put(char ch)
+std::ofstream& Trace::put(char ch)
 {
 	if (m_eOutputMode == omStdErr)
 	{

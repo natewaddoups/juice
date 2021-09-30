@@ -86,7 +86,7 @@ void EdgeList::vSetNodePointers (const NodeHashMap &NodeMap)
 		Generic::UINT32 uSource = (Generic::UINT32) pEdge->pGetSource ();
 		Generic::UINT32 uDestination = (Generic::UINT32) pEdge->pGetDestination ();
 
-        stdext::hash_map<Generic::UINT32, Node*>::const_iterator iterMap;
+		unordered_map<Generic::UINT32, Node*>::const_iterator iterMap;
 
 		iterMap = NodeMap.find ((Generic::UINT32) uSource);
 		if (iterMap == NodeMap.end ())

@@ -1,0 +1,3 @@
+[submodule "libraries/ode"]
+	path = libraries/ode
+	url = https://bitbucket.org/odedevs/ode.git

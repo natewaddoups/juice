@@ -18,7 +18,7 @@ author for updated license terms.
 #define __GenericXmlStreaming__
 
 #include <list>
-#include <hash_map>  // used by XmlInput class
+#include <unordered_map>  // used by XmlInput class
 #include <algorithm> // used by XmlOutput class
 //#include <fstream>
 //#include <malloc.h> // for alloca
@@ -329,7 +329,7 @@ private:
 	StringAssignFunc m_pfnStringAssign;
 
 	/// A map from one void pointer (a serialization ID) to another (a new object's pointer)
-	typedef hash_map <void*, void*> PointerMap;
+	typedef unordered_map <void*, void*> PointerMap;
 
 	/// A list of pointers to void pointers
 	typedef list<void**> PointerList;

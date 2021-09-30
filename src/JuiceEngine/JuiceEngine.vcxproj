@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{001B8B6A-9FD5-40AE-AA1E-8DE4B856879C}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <PlatformToolset>v142</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+    <CLRSupport>false</CLRSupport>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>16.0.30804.86</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>../../bin\</OutDir>
+    <IntDir>Debug\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>../../bin/release\</OutDir>
+    <IntDir>Release\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;JUICEENGINE_EXPORTS;MSVC;_USE_RAYTRACING_SUPPORT_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;advapi32.lib;winmm.lib;opengl32.lib;glu32.lib;generics.lib;</AdditionalDependencies>
+      <OutputFile>$(OutDir)JuiceEngine.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../bin; ../../../libraries/ode/contrib/msvc7/ode_triangle_collider/debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)JuiceEngine.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>$(OutDir)JuiceEngine.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <OmitFramePointers>true</OmitFramePointers>
+      <AdditionalIncludeDirectories>M:\Visual Studio Projects\Juice\Libraries\ode\include;M:\Visual Studio Projects\Juice\Juiceplay\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;JUICEENGINE_EXPORTS;dSINGLE;MSVC;_USE_RAYTRACING_SUPPORT_;Dynamics_ODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>kernel32.lib;user32.lib;gdi32.lib;advapi32.lib;winmm.lib;opengl32.lib;glu32.lib;generics.lib;mpegout.lib;demeter.lib</AdditionalDependencies>
+      <OutputFile>$(OutDir)JuiceEngine.dll</OutputFile>
+      <AdditionalLibraryDirectories>../../bin; ../../../libraries/ode/contrib/msvc7/ode_triangle_collider/debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention />
+      <ImportLibrary>$(OutDir)JuiceEngine.lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="Behavior.cpp" />
+    <ClCompile Include="Body.cpp" />
+    <ClCompile Include="Clipboard.cpp" />
+    <ClCompile Include="ClockworkBehavior.cpp" />
+    <ClCompile Include="ClockworkMotor.cpp" />
+    <ClCompile Include="Component.cpp" />
+    <ClCompile Include="DynamicsFactories.cpp" />
+    <ClCompile Include="Joint.cpp" />
+    <ClCompile Include="JointPrismatic.cpp" />
+    <ClCompile Include="JointRevolute.cpp" />
+    <ClCompile Include="JointSpherical.cpp" />
+    <ClCompile Include="JuiceEngine.cpp" />
+    <ClCompile Include="Model.cpp" />
+    <ClCompile Include="ModelCodec.cpp" />
+    <ClCompile Include="ModelDynamics.cpp" />
+    <ClCompile Include="ModelFile.cpp" />
+    <ClCompile Include="ModelLists.cpp" />
+    <ClCompile Include="NetworkBehavior.cpp" />
+    <ClCompile Include="NetworkNodes.cpp" />
+    <ClCompile Include="Property.cpp" />
+    <ClCompile Include="RenderAPI.cpp" />
+    <ClCompile Include="RenderInternal.cpp" />
+    <ClCompile Include="RenderModel.cpp" />
+    <ClCompile Include="RenderPrimitives.cpp" />
+    <ClCompile Include="RenderViewport.cpp" />
+    <ClCompile Include="SelectionSet.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Terrain.cpp" />
+    <ClCompile Include="UserPreferences.cpp" />
+    <ClCompile Include="Win32.cpp">
+      <AdditionalIncludeDirectories Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Documents and Settings\nate\My Documents\Visual Studio Projects\Juice\Libraries\ode\include;C:\Documents and Settings\nate\My Documents\Visual Studio Projects\Juice\Juiceplay\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\include\Behavior.h" />
+    <ClInclude Include="..\..\include\Body.h" />
+    <ClInclude Include="..\..\include\Clockwork.h" />
+    <ClInclude Include="..\..\include\Command.h" />
+    <ClInclude Include="..\..\include\DynamicsAPI.h" />
+    <ClInclude Include="..\..\include\GenericCommand.h" />
+    <ClInclude Include="..\..\include\GenericError.h" />
+    <ClInclude Include="..\..\include\GenericNotifyListen.h" />
+    <ClInclude Include="..\..\include\GenericProperties.h" />
+    <ClInclude Include="..\..\include\GenericTypes.h" />
+    <ClInclude Include="..\..\include\Joint.h" />
+    <ClInclude Include="..\..\include\JuiceEngine.h" />
+    <ClInclude Include="..\..\include\JuiceTypes.h" />
+    <ClInclude Include="..\..\include\Model.h" />
+    <ClInclude Include="..\..\include\MPEGout.h" />
+    <ClInclude Include="..\..\include\Network.h" />
+    <ClInclude Include="..\..\include\RenderAPI.h" />
+    <ClInclude Include="..\..\include\Terrain.h" />
+    <ClInclude Include="RenderInternal.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

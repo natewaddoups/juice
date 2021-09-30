@@ -20,12 +20,12 @@ http://www.natew.com/juice/License.html
 #include "resource.h"
 
 #include <atlbase.h>
-//#include <atlapp.h>
+#include <atlapp.h> // can't find
 #include <atlwin.h>
 
-CAppModule _Module;
+//CAppModule _Module;
 
-//#include <atlctrls.h>
+#include <atlctrls.h>  // can't find
 
 //#include 
 

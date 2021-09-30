@@ -157,8 +157,8 @@ NetworkBehavior& NetworkBehavior::operator= (const NetworkBehavior &src)
 {
 	Behavior::operator= (src);
 
-	hash_map <Edge*, Edge*> EdgeMap;
-	hash_map <Node*, Node*> NodeMap;
+	unordered_map <Edge*, Edge*> EdgeMap;
+	unordered_map <Node*, Node*> NodeMap;
 
 	// Duplicate the edges
 	{
@@ -220,7 +220,7 @@ NetworkBehavior& NetworkBehavior::operator= (const NetworkBehavior &src)
 
 	// Make the new edges point to the new nodes
 	{
-		hash_map <Edge*, Edge*>::iterator iter, last = EdgeMap.end ();
+		unordered_map <Edge*, Edge*>::iterator iter, last = EdgeMap.end ();
 		for (iter = EdgeMap.begin (); iter != last; iter++)
 		{
 			pair <Edge*, Edge*> EdgePair = *iter;
@@ -233,8 +233,8 @@ NetworkBehavior& NetworkBehavior::operator= (const NetworkBehavior &src)
 				continue;
 			}
 
-			hash_map <Node*, Node*>::iterator iterSource = NodeMap.find (pOldEdge->pGetSource ());
-			hash_map <Node*, Node*>::iterator iterDestination = NodeMap.find (pOldEdge->pGetDestination ());
+			unordered_map <Node*, Node*>::iterator iterSource = NodeMap.find (pOldEdge->pGetSource ());
+			unordered_map <Node*, Node*>::iterator iterDestination = NodeMap.find (pOldEdge->pGetDestination ());
 
 			// Duplicate the source node
 			if (iterSource == NodeMap.end ())
@@ -294,7 +294,7 @@ NetworkBehavior& NetworkBehavior::operator= (const NetworkBehavior &src)
 
 	// Add the nodes
 	{
-		hash_map <Node*, Node*>::iterator iter, last = NodeMap.end ();
+		unordered_map <Node*, Node*>::iterator iter, last = NodeMap.end ();
 		for (iter = NodeMap.begin (); iter != last; iter++)
 		{
 			pair <Node*, Node*> NodePair = *iter;
@@ -306,7 +306,7 @@ NetworkBehavior& NetworkBehavior::operator= (const NetworkBehavior &src)
 
 	// Add the edges
 	{
-		hash_map <Edge*, Edge*>::iterator iter, last = EdgeMap.end ();
+		unordered_map <Edge*, Edge*>::iterator iter, last = EdgeMap.end ();
 		for (iter = EdgeMap.begin (); iter != last; iter++)
 		{
 			pair <Edge*, Edge*> EdgePair = *iter;

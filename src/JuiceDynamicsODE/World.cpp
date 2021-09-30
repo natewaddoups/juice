@@ -15,7 +15,7 @@ http://www.natew.com/juice/License.html
 #include <JuiceEngine.h>
 #include <DynamicsAPI.h>
 
-#include <ode/ode.h>
+//#include "ode\ode.h"
 #include "DynamicsODE.h"
 
 #include <float.h>
@@ -42,6 +42,7 @@ World::World () :
 	m_rFriction (0), m_rBounce (0)
 {
 	// Create the dynamics world
+	dInitODE();
 	m_WorldID = dWorldCreate ();
 	dWorldSetGravity (m_WorldID, 0, 0, (dReal) -9.81);
 

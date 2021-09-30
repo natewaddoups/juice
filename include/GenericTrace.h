@@ -45,9 +45,9 @@ namespace Generic
 	protected:
 		OutputMode m_eOutputMode;
 
-		std::ofstream::_Myt& write (const char *sz, std::streamsize count);
-
-		std::ofstream::_Myt& put(char ch);
+		std::ofstream& write (const char *sz, std::streamsize count);
+		
+		std::ofstream& put(char ch);
 
 	};
 

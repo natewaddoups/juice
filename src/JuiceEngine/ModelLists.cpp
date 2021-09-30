@@ -74,7 +74,7 @@ void SphericalJointList::vCreateNew (SphericalJoint **ppNew, bool *pfAddToList)
 *****************************************************************************/
 
 template <class Class>
-void XmlSplWithTwinFixing<Class>::vCreateHashMap (hash_map<Generic::UINT32, Class*> &Map)
+void XmlSplWithTwinFixing<Class>::vCreateHashMap (unordered_map<Generic::UINT32, Class*> &Map)
 {
 	iterator iter, iterLast = end();
 	for (iter = begin (); iter != iterLast; iter++)
@@ -86,13 +86,13 @@ void XmlSplWithTwinFixing<Class>::vCreateHashMap (hash_map<Generic::UINT32, Clas
 }
 
 template <class Class>
-void XmlSplWithTwinFixing<Class>::vSetTwinPointers (hash_map<Generic::UINT32, Class*> &Map)
+void XmlSplWithTwinFixing<Class>::vSetTwinPointers (unordered_map<Generic::UINT32, Class*> &Map)
 {
 	iterator iter, iterLast = end();
 	for (iter = begin (); iter != iterLast; iter++)
 	{
 		Class* pObject = *iter;
-		hash_map<Generic::UINT32, Class*>::iterator iterMap = Map.find ((Generic::UINT32) pObject->pGetTwin ());
+		unordered_map<Generic::UINT32, Class*>::iterator iterMap = Map.find ((Generic::UINT32) pObject->pGetTwin ());
 		if (iterMap == Map.end ())
 		{
 			pObject->m_pTwin = null;
@@ -104,14 +104,14 @@ void XmlSplWithTwinFixing<Class>::vSetTwinPointers (hash_map<Generic::UINT32, Cl
 }
 
 template <class Class>
-void XmlSplWithTwinAndBodyFixing<Class>::vSetBodyPointers (hash_map<Generic::UINT32, Juice::Body*> &BodyMap)
+void XmlSplWithTwinAndBodyFixing<Class>::vSetBodyPointers (unordered_map<Generic::UINT32, Juice::Body*> &BodyMap)
 {
 	iterator iter, iterLast = end();
 	for (iter = begin (); iter != iterLast; iter++)
 	{
 		Class* pObject = *iter;
 
-		hash_map<Generic::UINT32, Body*>::iterator iterBodyMap = 
+		unordered_map<Generic::UINT32, Body*>::iterator iterBodyMap = 
 			BodyMap.find ((Generic::UINT32) pObject->pGetBody1 ());
 
 		if (iterBodyMap == BodyMap.end ())
@@ -138,14 +138,14 @@ void BehaviorList::vResetPointers (BodyHashMap &BodyMap, JointHashMap &JointMap)
 	}
 }
 
-void ClockworkMotorList::vSetJointPointers (hash_map<Generic::UINT32, Joint*> &Map)
+void ClockworkMotorList::vSetJointPointers (unordered_map<Generic::UINT32, Joint*> &Map)
 {
 	iterator iter, iterLast = end();
 	for (iter = begin (); iter != iterLast; iter++)
 	{
 		ClockworkMotor *pMotor = *iter;
 
-		hash_map<Generic::UINT32, Joint*>::iterator iterMap = Map.find ((Generic::UINT32) pMotor->pGetJoint ());
+		unordered_map<Generic::UINT32, Joint*>::iterator iterMap = Map.find ((Generic::UINT32) pMotor->pGetJoint ());
 		if (iterMap == Map.end ())
 		{
 			pMotor->vSetJoint (null);

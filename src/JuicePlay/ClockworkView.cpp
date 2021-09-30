@@ -466,7 +466,8 @@ void CClockworkView::vSetPaneSizes ()
 
 	int iPaneHeight = rc.bottom / iPanes;
 
-	for (int iPane = 0; iPane < iPanes; iPane++)
+	int iPane;
+	for (iPane = 0; iPane < iPanes; iPane++)
 	{
 		RECT rcPane;
 		rcPane.left = rc.left;

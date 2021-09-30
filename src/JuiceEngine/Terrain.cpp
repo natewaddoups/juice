@@ -14,8 +14,8 @@ http://www.natew.com/juice/License.html
 
 #include <JuiceEngine.h>
 
-#include <Terrain\Terrain.h>
-#include "Terrain.h"
+// #include <Terrain\Terrain.h>
+// #include "Terrain.h"
 
 using namespace Juice;
 using namespace Generic;
@@ -196,10 +196,11 @@ Terrain::Terrain () : m_pTerrain (null), m_pTriangleArray (null), m_pVertexArray
 	*pLastSlash = 0;
 
 	strcat (szPath, "\\Terrain");
-
+/*
 	Demeter::Settings::GetInstance()->SetMediaPath(szPath);
 	Demeter::Settings::GetInstance()->SetVerbose(false);
 	Demeter::Settings::GetInstance()->SetTextureCompression(true);
+	*/
 }
 
 /****************************************************************************/
@@ -231,12 +232,13 @@ void Terrain::vInitialize ()
 
 	try
 	{
-		m_pTerrain = new Demeter::Terrain(8, 8, 1, 10000, false);
+		//m_pTerrain = new Demeter::Terrain(8, 8, 1, 10000, false);
 	}
-	catch (DemeterException* pEx)
+/*	catch (DemeterException* pEx)
 	{
 		OutputDebugString (pEx->GetErrorMessage ());
 	}
+*/
 	catch (...)
 	{
 		OutputDebugString ("Terrain init failed\n");
@@ -284,7 +286,7 @@ TerrainLoadError Terrain::eLoad ()
 
 	try
 	{
-		Demeter::Settings::GetInstance()->SetUseNormals (true);
+/*		Demeter::Settings::GetInstance()->SetUseNormals (true);
 		m_pTerrain->SetAllElevations (m_strElevationImage.c_str (), (float) m_rVertexSpacing, (float) m_rElevationScale);
 
 		if (m_strTexture.length () > 3)
@@ -303,6 +305,7 @@ TerrainLoadError Terrain::eLoad ()
 	{
 		OutputDebugString (pEx->GetErrorMessage ());
 		return tleUnknown;
+*/
 	}
 	catch (...)
 	{
@@ -335,7 +338,7 @@ void Terrain::vRender ()
 	if (!m_pTerrain)
 		return;
 
-	glEnable (GL_LIGHTING);
+/*	glEnable (GL_LIGHTING);
 	glShadeModel (GL_SMOOTH);
 	glEnable (GL_TEXTURE_2D);
 
@@ -402,6 +405,7 @@ void Terrain::vRender ()
 
 		glEnd ();
 	}
+	*/
 }
 
 /****************************************************************************/
@@ -428,7 +432,7 @@ real Terrain::rGetElevation (real rX, real rY)
 		return 0;
 	}
 
-	return m_pTerrain->GetElevation ((float) rX, (float) rY);    
+//	return m_pTerrain->GetElevation ((float) rX, (float) rY);    
 }
 
 /****************************************************************************/
@@ -442,8 +446,8 @@ void Terrain::vGetDimensions (real &rX, real &rY)
 		return;
 	}
 
-	rX = m_pTerrain->GetWidth ();
-	rY = m_pTerrain->GetHeight ();
+//	rX = m_pTerrain->GetWidth ();
+//	rY = m_pTerrain->GetHeight ();
 }
 
 /****************************************************************************/
@@ -457,8 +461,8 @@ void Terrain::vGetDimensions (int  &iX, int &iY)
 		return;
 	}
 
-	iX = m_pTerrain->GetWidthVertices ();
-	iY = m_pTerrain->GetHeightVertices ();
+//	iX = m_pTerrain->GetWidthVertices ();
+//	iY = m_pTerrain->GetHeightVertices ();
 }
 
 /*void Terrain::vGetTriangles (Terrain::Vertex **ppVertexArray, int *pVertices,
@@ -485,7 +489,7 @@ void Terrain::vBuildArrays ()
 		GenericUnexpected ("terrain disabled");
 		return;
 	}
-
+/*
 	const Demeter::Vector *pTerrainVertexArray = m_pTerrain->m_pVertices;
 
 	if (!pTerrainVertexArray)
@@ -561,6 +565,7 @@ void Terrain::vBuildArrays ()
 			m_pTriangleArray[iTriangle].v3 = iIndex;
 		}
 	}
+	*/
 }
 
 /****************************************************************************/
@@ -578,16 +583,17 @@ real Terrain::rCastShadow (const VectorXYZ &vecObject, const VectorXYZ &vecLight
 
 	float ShadowPointX, ShadowPointY, ShadowPointZ;
 
-	real r = m_pTerrain->IntersectRay (
+/*	real r = m_pTerrain->IntersectRay (
 		(float) vecLightSource.x, (float) vecLightSource.y, (float) vecLightSource.z,
 		(float) vecDirection.x, (float) vecDirection.y, (float) vecDirection.z,
 		ShadowPointX, ShadowPointY, ShadowPointZ);
-
+		*/
 	vecShadowPoint.x = ShadowPointX;
 	vecShadowPoint.y = ShadowPointY;
 	vecShadowPoint.z = ShadowPointZ;
 
-	return r;
+	//return r;
+	return 0;
 }
 
 /****************************************************************************/
@@ -603,7 +609,7 @@ void Terrain::vGetNormal (real rX, real rY, VectorXYZ &vecNormal)
 
 	float NormalX, NormalY, NormalZ;
 
-	m_pTerrain->GetNormal ((float) rX, (float) rY, NormalX, NormalY, NormalZ);
+//	m_pTerrain->GetNormal ((float) rX, (float) rY, NormalX, NormalY, NormalZ);
 
 	vecNormal.x = NormalX;
 	vecNormal.y = NormalY;

@@ -527,7 +527,7 @@ void CModelTreeView::ClockworkBehavior_AddMotor (ClockworkBehavior *pBehavior, C
 	// find parent
 	HTREEITEM hParent;
 	Behavior *pBaseBehavior = (Behavior*) pBehavior;
-	vFindMatchingItems (pBaseBehavior, vGetItem, &hParent);
+	vFindMatchingItems (pBaseBehavior, &CModelTreeView::vGetItem, &hParent);
 
 	if (!hParent)
 		return;
@@ -554,7 +554,7 @@ void CModelTreeView::ClockworkBehavior_AddMotor (ClockworkBehavior *pBehavior, C
 *****************************************************************************/
 void CModelTreeView::Notifier_Deleted (Component *pComponent)
 {
-	vFindMatchingItems (pComponent, vDelete);
+	vFindMatchingItems (pComponent, &CModelTreeView::vDelete);
 	vRepaintTree ();
 }
 
@@ -563,7 +563,7 @@ void CModelTreeView::Notifier_Deleted (Component *pComponent)
 *****************************************************************************/
 void CModelTreeView::Notifier_Deleted (Behavior *pBehavior)
 {
-	vFindMatchingItems (pBehavior, vDelete);
+	vFindMatchingItems (pBehavior, &CModelTreeView::vDelete);
 	vRepaintTree ();
 }
 
@@ -572,7 +572,7 @@ void CModelTreeView::Notifier_Deleted (Behavior *pBehavior)
 *****************************************************************************/
 void CModelTreeView::Notifier_Deleted (ClockworkMotor *pMotor)
 {
-	vFindMatchingItems (pMotor, vDelete);
+	vFindMatchingItems (pMotor, &CModelTreeView::vDelete);
 	vRepaintTree ();
 }
 
@@ -587,7 +587,7 @@ void CModelTreeView::Component_Changed (Juice::Component *pComponent)
 		return;
 	}
 
-	vFindMatchingItems (pComponent, vComponentChange);
+	vFindMatchingItems (pComponent, &CModelTreeView::vComponentChange);
 }
 
 /****************************************************************************/
@@ -601,7 +601,7 @@ void CModelTreeView::Behavior_Changed (Juice::Behavior *pBehavior)
 		return;
 	}
 
-	vFindMatchingItems (pBehavior, vBehaviorChange);
+	vFindMatchingItems (pBehavior, &CModelTreeView::vBehaviorChange);
 }
 
 /****************************************************************************/
@@ -615,7 +615,7 @@ void CModelTreeView::ClockworkMotor_Changed (Juice::ClockworkMotor *pMotor)
 		return;
 	}
 
-	vFindMatchingItems (pMotor, vMotorChange);
+	vFindMatchingItems (pMotor, &CModelTreeView::vMotorChange);
 }
 
 /****************************************************************************/
@@ -623,7 +623,7 @@ void CModelTreeView::ClockworkMotor_Changed (Juice::ClockworkMotor *pMotor)
 *****************************************************************************/
 void CModelTreeView::Selection_Add (SelectionSet *pSet, Selectable *pSelectable, bool fAutomatic)
 {
-	vFindMatchingItems (pSelectable, vSelect, (void*) true);
+	vFindMatchingItems (pSelectable, &CModelTreeView::vSelect, (void*) true);
 }
 
 /****************************************************************************/
@@ -631,7 +631,7 @@ void CModelTreeView::Selection_Add (SelectionSet *pSet, Selectable *pSelectable,
 *****************************************************************************/
 void CModelTreeView::Selection_Remove (SelectionSet *pSet, Selectable *pSelectable)
 {
-	vFindMatchingItems (pSelectable, vSelect, (void*) false);
+	vFindMatchingItems (pSelectable, &CModelTreeView::vSelect, (void*) false);
 
 	// hook for the derived class
 	//Motor *pMotion = pSet->pGetMotor (pSelectable);
@@ -914,7 +914,7 @@ BOOL CModelTreeView::OnNotify(WPARAM wParam, LPARAM lParam, LRESULT* pResult)
 *****************************************************************************/
 void CModelTreeView::OnDestroy()
 {
-	vFindMatchingItems (null, vDeleteEverything);
+	vFindMatchingItems (null, &CModelTreeView::vDeleteEverything);
 }
 
 // ModelTreeView.cpp ends here ->
