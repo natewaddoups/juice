@@ -13,10 +13,10 @@ biped walking around under joystick control. But I never did get the actual robo
 
 Life continued, other hobbies took over, and I forgot about the whole thing. 
 
-Ten years later, I couldn't get it to compile with current compilers.
+Ten years later, I couldn't get it to compile with then-current compilers.
 
-Twenty years later, I figured I should get it to compile, and put it on GitHub. 
+Twenty years later, I figured I should get it compiled again, and put it on GitHub. 
 
-It's going to need more rehabilitation, but to my great surprise, it mostly works.
+It's going to need more rehabilitation. But, to my great surprise, it mostly works.
 
 I don't remember why I named it Juice.
