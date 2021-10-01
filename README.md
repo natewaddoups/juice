@@ -17,6 +17,6 @@ Ten years later, I couldn't get it to compile with current compilers.
 
 Twenty years later, I figured I should get it to compile, and put it on GitHub. 
 
-It's on GitHub. That was the easy part.
+It's going to need more rehabilitation, but to my great surprise, it mostly works.
 
 I don't remember why I named it Juice.
