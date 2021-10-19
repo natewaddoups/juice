@@ -19,4 +19,6 @@ Twenty years later, I figured I should get it compiled again, and put it on GitH
 
 It's going to need more rehabilitation. But, to my great surprise, it mostly works.
 
+Grab the [latest zip file](https://github.com/natewaddoups/juice/releases/latest) and load some of the included models. Maximum enjoyment requires a joystick, at least for now.
+
 The name Juice was an homage to SodaPlay, a (defunct) browser-based contraption construction kit that provided significant inspiration for this project.
