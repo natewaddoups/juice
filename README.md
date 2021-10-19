@@ -8,8 +8,8 @@ Specifying robot geometry in C++ was hard, so I started building a GUI to
 define and "motorize" jointed rigid bodies.
 
 One thing led to another, and I ended up with a GUI that I was quite proud of, complete
-with a built-in visual programming language to specify robot motion. I even had virtual
-quadrupeds, hexapods, and bipeds walking around under joystick control.  Snakes, too!
+with multilevel undo/redo and a built-in visual programming language to specify robot 
+motion. I even had virtual quadrupeds, hexapods, and bipeds walking around under joystick control.  Snakes, too!
 
 Life continued, other hobbies took over, and I forgot about the whole thing. 
 
