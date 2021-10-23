@@ -9,7 +9,7 @@ Juice is an editor and simulator for jointed and motorized contraptions.
 * Create simple geometric objects
 * Drag them around with a mouse
 * Resize them with your keyboard
-* Connect the with hinges or sliding joints
+* Connect them with hinges or sliding joints
 * Motorize the joints with simple wave functions
 * Create complex control systems with a visual programming language
 * Use multilevel undo/redo to erase and repeat your mistakes
